@@ -6,6 +6,7 @@ body {
 }
 .rpi-list {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 .rpi {
@@ -20,12 +21,13 @@ body {
     padding: 5px;
     border-bottom: 1px solid #ccc;
     display: flex;
+    align-items: stretch;
     width: 100%;
 }
 .rpi  div.rpikey {
-    width: 30%;
-    min-width: 29%;
-    max-width: 150px;
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
 }
 .rpi  div.rpivalue {
     width: 70%;
