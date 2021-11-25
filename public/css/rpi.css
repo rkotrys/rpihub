@@ -11,11 +11,12 @@ body {
 .rpi {
     width: 250px;
     min-width: 250px;
+    max-width: 250px;
     margin: 12px;
     background-color:antiquewhite;
 }
 .rpi > div {
-    margin: 5px;
+    margin: 5px 0;
     padding: 5px;
     border-bottom: 1px solid #ccc;
     display: flex;
