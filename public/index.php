@@ -18,6 +18,7 @@ public function __construct(){
      }
   $query="CREATE TABLE IF NOT EXISTS rpi (sn INTEGER PRIMARY KEY, 
                                           arch varchar(20), 
+                                          chip varchar(20),
                                           hostname varchar(50), 
                                           ip varchar(16), 
                                           wip varchar(16), 
@@ -52,7 +53,7 @@ public function get($sn){
 }
 
 public function insert($d){
-   $query="insert into rpi ( sn, arch, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
+   $query="insert into rpi ( sn, arch, chip, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['chip']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
    echo $query;
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
@@ -77,6 +78,23 @@ public function del($sn){
 
 }
 
+function rpi_show($rpi){
+   $buf="<div class='rpi' sn='".$rpi["sn"]."'>\n";
+   foreach( $rpi as $k=>$v){
+       $buf.="<div class='rpi-$k'>\n<div class='rpikey'>$k</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
+   }
+   $buf.="</div>\n";
+   return $buf;
+}
+
+function rpi_showall($r){
+   $buf='';
+   foreach( $r as $k=>$rpi){
+      $buf .= rpu_show($rpi);
+   }
+   return $buf;
+}
+
 $db = new Datatable();
 
 
@@ -88,12 +106,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;
       case 'getall':
          $r = $db->getall();
-         foreach( $r as $k=>$v ){
-            foreach( $v as $k2=>$v2){
-               echo "$k2 -> $v2, ";
-            }
-            echo "<br>\n";
-         }
+         $buf = rpi_showall($r);
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
@@ -102,6 +115,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'insert':
          $d=array( 'sn'=>$_GET['sn'],
                    'arch'=>$_GET['arch'],
+                   'chip'=>$_GET['chip'],
                    'hostname'=>$_GET['hostname'],
                    'ip'=>$_GET['ip'],
                    'wip'=>$_GET['wip'],
@@ -113,6 +127,10 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          echo $r;
          break; 
       case 'delete':
+         $db->del($_GET['sn']);
+         break;      
+      case 'show':
+         $buf=
          $db->del($_GET['sn']);
          break;      
       case 'test':
