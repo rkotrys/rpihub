@@ -19,12 +19,12 @@ body {
 .rpi  div.rpikey {
     width: 30%;
     max-width: 150px;
-    display: inline-block;
+    display: inline;
 }
 .rpi  div.rpivalue {
     width: 70%;
     min-width: 150px;
-    display: inline-block;
+    display: inline;
 }
 .rpi > .rpi-sn {
     font-weight: bold;
