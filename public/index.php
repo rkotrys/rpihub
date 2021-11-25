@@ -1,0 +1,121 @@
+<?php
+session_start();
+date_default_timezone_set("Europe/Warsaw");
+
+class Datatable 
+{
+protected $db;
+    
+public function __construct(){
+// Tworzenie obiektu klasy PDO - baza danych SQLite
+  try{ 
+       $this->db = new PDO('sqlite:'.dirname(__FILE__).'./../db/db.sq3'); 
+       $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     }
+  catch(PDOException $e){ 
+       echo $e->getMessage().": ".$e->getCode();  
+       exit; 
+     }
+  $query="CREATE TABLE IF NOT EXISTS rpi (sn INTEGER PRIMARY KEY, arch varchar(20), hostname varchar(50), ip varchar(16), wip varchar(16), puuid varchr(20), emac varchar(20), wmac varchar(20), last datetime default CURRENT_TIMESTAMP  )";
+  try{  $this->db->exec($query); }
+  catch(PDOException $e){ 
+      echo $e->getMessage().": ".$e->getCode(); 
+      exit; 
+      }
+}
+public function getall(){
+   $query="select * from rpi order by sn";
+   try{ $r = $this->db->query($query); }
+   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   $result=array();
+   while( $data = $r->fetch(\PDO::FETCH_ASSOC) ){
+      $result[$data['sn']] = $data;
+   }
+   return $result;   
+}
+
+public function get($sn){
+   $query="select * from rpi where sn='$sn' limit 1";
+   try{ $r = $this->db->query($query); }
+   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   $result=array();
+   $data = $r->fetch(\PDO::FETCH_ASSOC);
+   return $data;   
+}
+
+public function insert($d){
+   $query="insert into rpi ( sn, arch, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
+   echo $query;
+   try{ $r = $this->db->query($query); }
+   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   return $r;   
+}
+
+public function update($d){
+
+}
+public function set($d){
+
+}
+
+
+public function del($sn){
+   $query="delete from rpi where sn='$sn' limit 1";
+   try{ $r = $this->db->query($query); }
+   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   return $r;
+}
+
+
+}
+
+$db = new Datatable();
+
+
+if( isset($_GET['get']) and $_GET['get']!='' ){
+   switch ( $_GET['get'] ){
+      case 'datetime':
+         echo date("Y-m-d H:i:s");
+         exit;
+         break;
+      case 'getall':
+         $r = $db->getall();
+         foreach( $r as $k=>$v ){
+            foreach( $v as $k2=>$v2){
+               echo "$k2 -> $v2, ";
+            }
+            echo "<br>\n";
+         }
+         break;   
+      case 'get':
+         $r=$db->get($_GET['sn']);
+         print_r($r);
+         break;
+      case 'insert':
+         $d=array( 'sn'=>$_GET['sn'],
+                   'arch'=>$_GET['arch'],
+                   'hostname'=>$_GET['hostname'],
+                   'ip'=>$_GET['ip'],
+                   'wip'=>$_GET['wip'],
+                   'puuid'=>$_GET['puuid'],
+                   'emac'=>$_GET['emac'],
+                   'wmac'=>$_GET['wmac']
+         );
+         $r=$db->insert($d);
+         echo $r;
+         break; 
+      case 'delete':
+         $db->del($_GET['sn']);
+         break;      
+      case 'test':
+         $buf="<p>Content</p>";
+         break;
+
+    default:
+         $buf="<h1>RPI: bad token</h1>";
+
+   }
+}
+
+echo "<!DOCTYPE HTML><html><head><meta http-equiv='content-type' content='text/html; charset=utf-8'></head><body>$buf</body></html>";
+exit;
