@@ -154,6 +154,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
    <header class="w3-container w3-teal">
    <h1>RPI-hub</h1>
    </header>      
-$buf
+<?=$buf?>
 </body>
 </html>
