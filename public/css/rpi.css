@@ -5,9 +5,9 @@ body {
 
 }
 .rpi {
-    width: 100px;
-    max-width: 300px;
-    min-width: 100px;
+    width: 300px;
+    max-width: 500px;
+    min-width: 200px;
     margin: 12px;
     background-color:antiquewhite;
 }
