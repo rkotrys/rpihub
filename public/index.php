@@ -90,7 +90,7 @@ function rpi_show($rpi){
 function rpi_showall($r){
    $buf='';
    foreach( $r as $k=>$rpi){
-      $buf .= rpu_show($rpi);
+      $buf .= rpi_show($rpi);
    }
    return $buf;
 }
