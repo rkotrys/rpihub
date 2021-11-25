@@ -79,7 +79,7 @@ public function del($sn){
 }
 
 function rpi_show($rpi){
-   $buf="<div class='rpi' sn='".$rpi["sn"]."'>\n";
+   $buf="<div class='w3-card rpi' sn='".$rpi["sn"]."'>\n";
    foreach( $rpi as $k=>$v){
        $buf.="<div class='rpi-$k'>\n<div class='rpikey'>$k</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
@@ -142,6 +142,18 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
 
    }
 }
-
-echo "<!DOCTYPE HTML><html><head><meta http-equiv='content-type' content='text/html; charset=utf-8'></head><body>$buf</body></html>";
-exit;
+?><!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+   <link rel="stylesheet" href="css/rpi.css"> 
+</head>
+<body>
+   <header class="w3-container w3-teal">
+   <h1>RPI-hub</h1>
+   </header>      
+$buf
+</body>
+</html>
