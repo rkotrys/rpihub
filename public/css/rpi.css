@@ -14,6 +14,8 @@ body {
     margin: 5px;
     padding: 5px;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    width: 100%;
 }
 .rpi  div.rpikey {
     width: 30%;
