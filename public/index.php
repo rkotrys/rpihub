@@ -79,7 +79,7 @@ public function del($sn){
 }
 
 function rpi_show($rpi){
-   $buf="<div class='w3-card rpi' sn='".$rpi["sn"]."'>\n";
+   $buf="<div class='w3-card flex-container rpi' sn='".$rpi["sn"]."'>\n";
    foreach( $rpi as $k=>$v){
        $buf.="<div class='rpi-$k'>\n<div class='rpikey'>$k</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }

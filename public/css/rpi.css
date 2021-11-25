@@ -6,8 +6,7 @@ body {
 }
 .rpi {
     width: 310px;
-    max-width: 500px;
-    min-width: 200px;
+    min-width: 310px;
     margin: 12px;
     background-color:antiquewhite;
 }
@@ -20,12 +19,10 @@ body {
     width: 30%;
     min-width: 29%;
     max-width: 150px;
-    display: inline;
 }
 .rpi  div.rpivalue {
     width: 70%;
     min-width: 69%;
-    display: inline;
 }
 .rpi > .rpi-sn {
     font-weight: bold;
