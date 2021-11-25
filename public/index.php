@@ -5,7 +5,7 @@ date_default_timezone_set("Europe/Warsaw");
 class Datatable 
 {
 protected $db;
-    
+
 public function __construct(){
 // Tworzenie obiektu klasy PDO - baza danych SQLite
   try{ 
@@ -16,7 +16,15 @@ public function __construct(){
        echo $e->getMessage().": ".$e->getCode();  
        exit; 
      }
-  $query="CREATE TABLE IF NOT EXISTS rpi (sn INTEGER PRIMARY KEY, arch varchar(20), hostname varchar(50), ip varchar(16), wip varchar(16), puuid varchr(20), emac varchar(20), wmac varchar(20), last datetime default CURRENT_TIMESTAMP  )";
+  $query="CREATE TABLE IF NOT EXISTS rpi (sn INTEGER PRIMARY KEY, 
+                                          arch varchar(20), 
+                                          hostname varchar(50), 
+                                          ip varchar(16), 
+                                          wip varchar(16), 
+                                          puuid varchr(20), 
+                                          emac varchar(20), 
+                                          wmac varchar(20), 
+                                          last datetime default CURRENT_TIMESTAMP  )";
   try{  $this->db->exec($query); }
   catch(PDOException $e){ 
       echo $e->getMessage().": ".$e->getCode(); 
