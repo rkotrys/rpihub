@@ -89,11 +89,11 @@ function rpi_show($rpi){
 
 function rpi_showall($r){
    $buf='';
+   $buf.="<div class='rpi-list'>";
    foreach( $r as $k=>$rpi){
-      $buf.="<div class='rpi-list'>";
       $buf .= rpi_show($rpi);
-      $buf.="</div>";
    }
+   $buf.="</div>";
    return $buf;
 }
 
