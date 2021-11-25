@@ -16,6 +16,16 @@ body {
     padding: 5px;
     border-bottom: 1px solid #ccc;
 }
+.rpi > div.rpikey {
+    width: 30%;
+    max-width: 150px;
+    display: inline-block;
+}
+.rpi > div.rpivalue {
+    width: 70%;
+    min-width: 150px;
+    display: inline-block;
+}
 .rpi > .rpi-sn {
     font-weight: bold;
 }
