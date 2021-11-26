@@ -131,7 +131,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          );
          if( is_array($db->get($d['sn']))){
             $r=$db->update($d);
-            print_r($r);
+            print_r('xxx', $r);
          }else{
             $r=$db->insert($d);
          }
