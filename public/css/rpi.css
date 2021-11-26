@@ -15,6 +15,7 @@ body {
     min-width: 250px;
     max-width: 250px;
     margin: 12px;
+    padding: 5px;
     background-color:antiquewhite;
 }
 .rpi > div {
@@ -24,7 +25,7 @@ body {
     width: 100%;
 }
 .rpi  div.rpikey {
-    padding: 0 10px 0 0;
+    padding: 0 10px 0 10px;
     width: 100px;
     min-width: 100px;
     max-width: 100px;
