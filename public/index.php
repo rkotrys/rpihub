@@ -83,7 +83,7 @@ public function del($sn){
 }
 
 function rpi_show($rpi){
-   $tdiff = time() - strtotime($rpi['last']);
+   $tdiff = time() - strtotime($rpi['last']) - timezone_offset_get();
    if( $tdiff < 4 ){ $online='rpi-online'; } else { $online='rpi-offline'; }
    $buf="<div class='w3-card rpi $online' sn='" . $rpi["sn"] . "' >\n";
    foreach( $rpi as $k=>$v){
