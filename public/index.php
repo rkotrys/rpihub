@@ -130,8 +130,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wmac'=>$_GET['wmac']
          );
          if( is_array($db->get($d['sn']))){
-            print_r($r);
             $r=$db->update($d);
+            print_r($r);
          }else{
             $r=$db->insert($d);
          }
