@@ -21,10 +21,10 @@ body {
     background-color:antiquewhite;
 }
 .rpi-offline {
-    background-color: #ddd;
+    background-color: #ccc;
 }
 .rpi > div {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
     display: flex;
     align-items: stretch;
     width: 100%;
