@@ -91,9 +91,9 @@ function rpi_show($rpi){
    }
 
    if( $tdiff < 4 ){
-      $buf.="<div style='width:100%;text-align:center;'>ON-Line</div>\n";
+      $buf.="<div style='padding-left:12px;'>ON-Line</div>\n";
    }else{
-      $buf.="<div style='width:100%;text-align:center;'>OFF-Line: $tdiff s</div>\n";
+      $buf.="<div style='padding-left:12px;'>OFF-Line: $tdiff s</div>\n";
    }
    
    $buf.="</div>\n";
