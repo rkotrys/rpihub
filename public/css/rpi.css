@@ -26,10 +26,10 @@ body {
     width: 100%;
 }
 .rpi  div.rpikey {
+    text-align: right;
     width: 100px;
     min-width: 100px;
     max-width: 100px;
-    text-align: right;
 }
 .rpi  div.rpivalue {
     width: 70%;
