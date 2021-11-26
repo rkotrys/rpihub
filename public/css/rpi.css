@@ -18,20 +18,19 @@ body {
     background-color:antiquewhite;
 }
 .rpi > div {
-    margin: 5px 0;
-    padding: 5px;
     border-bottom: 1px solid #ccc;
     display: flex;
     align-items: stretch;
     width: 100%;
 }
 .rpi  div.rpikey {
-    text-align: right;
+    padding: 0 10px 0 0;
     width: 100px;
     min-width: 100px;
     max-width: 100px;
 }
 .rpi  div.rpivalue {
+    padding: 0;
     width: 70%;
     min-width: 69%;
 }
