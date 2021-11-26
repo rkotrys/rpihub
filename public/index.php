@@ -22,7 +22,7 @@ public function __construct(){
                                           hostname varchar(50), 
                                           ip varchar(16), 
                                           wip varchar(16), 
-                                          puuid varchr(20), 
+                                          puuid varchar(20), 
                                           emac varchar(20), 
                                           wmac varchar(20), 
                                           last datetime default CURRENT_TIMESTAMP  )";
