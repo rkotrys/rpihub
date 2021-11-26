@@ -112,7 +112,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
-         # print_r($r);
+         print_r($r);
          break;
       case 'insert':
          $d=array( 'sn'=>$_GET['sn'],
@@ -125,6 +125,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'emac'=>$_GET['emac'],
                    'wmac'=>$_GET['wmac']
          );
+
          $r=$db->insert($d);
          # echo $r;
          break; 
