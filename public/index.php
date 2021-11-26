@@ -116,7 +116,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
-         print_r($r);
+         $buf = rpi_showall( array($r['sn']=>$r) );
          break;
       case 'insert':
          $d=array( 'sn'=>$_GET['sn'],
@@ -131,7 +131,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          );
          if( is_array($db->get($d['sn']))){
             $r=$db->update($d);
-            print_r('xxx', $r);
          }else{
             $r=$db->insert($d);
          }
