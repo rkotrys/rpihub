@@ -83,7 +83,8 @@ public function del($sn){
 }
 
 function rpi_show($rpi){
-   $buf="<div class='w3-card rpi' sn='".$rpi["sn"]."'>\n";
+   if( (strtotime('now') - strtotime($rpi['last']))>4 ){ $online=false; } else { $online=true; }
+   $buf="<div class='w3-card rpi ".($online)?"rpi-online":"rpi-offline"."' sn='".$rpi["sn"]."' >\n";
    foreach( $rpi as $k=>$v){
        $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }

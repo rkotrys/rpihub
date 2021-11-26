@@ -18,6 +18,12 @@ body {
     padding: 5px;
     background-color:antiquewhite;
 }
+.rpi-online {
+    background-color:antiquewhite;
+}
+.rpi-offline {
+    background-color: #ddd;
+}
 .rpi > div {
     border-bottom: 1px solid #ccc;
     display: flex;
