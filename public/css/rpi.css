@@ -29,6 +29,7 @@ body {
     width: 100px;
     min-width: 100px;
     max-width: 100px;
+    text-align: right;
 }
 .rpi  div.rpivalue {
     width: 70%;
