@@ -90,7 +90,7 @@ function rpi_show($rpi){
        $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
 
-   if( $tdif < 4 ){
+   if( $tdiff < 4 ){
       $buf.="<div style='width:100%;text-align:center;'>ON-Line</div>\n";
    }else{
       $buf.="<div style='width:100%;text-align:center;'>OFF-Line: ".$tdiff/60.0." min</div>\n";
