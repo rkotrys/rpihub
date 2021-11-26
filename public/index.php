@@ -16,7 +16,7 @@ public function __construct(){
        echo $e->getMessage().": ".$e->getCode();  
        exit; 
      }
-  $query="CREATE TABLE IF NOT EXISTS rpi (sn INTEGER PRIMARY KEY, 
+  $query="CREATE TABLE IF NOT EXISTS rpi (sn varchar(20) PRIMARY KEY, 
                                           arch varchar(20), 
                                           chip varchar(20),
                                           hostname varchar(50), 
