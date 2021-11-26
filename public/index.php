@@ -130,6 +130,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wmac'=>$_GET['wmac']
          );
          if( is_array($db->get($d['sn']))){
+            print_r($r);
             $r=$db->update($d);
          }else{
             $r=$db->insert($d);
@@ -163,6 +164,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
    <header class="w3-container w3-teal">
    <h1>RPI-hub</h1>
    </header>      
-<?=$buf?>
+<?php if( isset($buf) ) print($buf); ?>
 </body>
 </html>
