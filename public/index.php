@@ -106,6 +106,12 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          echo date("Y-m-d H:i:s");
          exit;
          break;
+      case 'post':
+         foreach( $_POST as $k=>$v ){
+            echo $k."\n";
+            echo $v."\n";
+            exit;
+         }   
       case 'getall':
          $r = $db->getall();
          $buf = rpi_showall($r);
