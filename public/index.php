@@ -124,6 +124,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             echo $k."\n";
             echo $v."\n";
             exit;
+            break;
          }   
       case 'getall':
          $r = $db->getall();
