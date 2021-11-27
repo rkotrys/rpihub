@@ -120,10 +120,10 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          exit;
          break;
       case 'post':
-         foreach( $_POST as $k=>$v ){
-            echo $k."\n";
-            echo $v."\n";
-         }   
+         $json = file_get_contents('php://input');
+         print_r($json);
+         $df=json_decode(file_get_contents('php://input'), true);
+         print_r($df);
          exit;
          break;
       case 'getall':
