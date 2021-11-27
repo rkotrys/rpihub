@@ -138,6 +138,10 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wip'=>$df['wip'],
                    'puuid'=>$df['puuid'],
                    'emac'=>$df['emac'],
+                   'release'=>$df['release'],
+                   'version'=>$df['version'],
+                   'memtotal'=>$df['memtotal'],
+                   'model'=>$df['model'],
                    'wmac'=>$df['wmac']
          );
          if( is_array($db->get($d['sn']))){
