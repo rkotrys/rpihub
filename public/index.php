@@ -149,6 +149,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $r=$db->insert($d);
          }
+         exit;
          break; 
       case 'delete':
          $db->del($_GET['sn']);
