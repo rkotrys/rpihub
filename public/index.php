@@ -123,9 +123,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          foreach( $_POST as $k=>$v ){
             echo $k."\n";
             echo $v."\n";
-            exit;
-            break;
          }   
+         exit;
+         break;
       case 'getall':
          $r = $db->getall();
          $buf = rpi_showall($r);
