@@ -119,13 +119,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          echo date("Y-m-d H:i:s");
          exit;
          break;
-      case 'post':
-         $json = file_get_contents('php://input');
-         print_r($json);
-         $df=json_decode(file_get_contents('php://input'), true);
-         print_r($df);
-         exit;
-         break;
       case 'getall':
          $r = $db->getall();
          $buf = rpi_showall($r);
@@ -135,15 +128,17 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $buf = rpi_showall( array($r['sn']=>$r) );
          break;
       case 'insert':
-         $d=array( 'sn'=>$_GET['sn'],
-                   'arch'=>$_GET['arch'],
-                   'chip'=>$_GET['chip'],
-                   'hostname'=>$_GET['hostname'],
-                   'ip'=>$_GET['ip'],
-                   'wip'=>$_GET['wip'],
-                   'puuid'=>$_GET['puuid'],
-                   'emac'=>$_GET['emac'],
-                   'wmac'=>$_GET['wmac']
+      case 'post':         
+         $df=json_decode(file_get_contents('php://input'), true);
+         $d=array( 'sn'=>$df['serial'],
+                   'arch'=>$df['machine'],
+                   'chip'=>$df['chip'],
+                   'hostname'=>$df['hostname'],
+                   'ip'=>$df['ip'],
+                   'wip'=>$df['wip'],
+                   'puuid'=>$df['puuid'],
+                   'emac'=>$df['emac'],
+                   'wmac'=>$df['wmac']
          );
          if( is_array($db->get($d['sn']))){
             $r=$db->update($d);
