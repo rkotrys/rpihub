@@ -16,13 +16,13 @@ public function __construct(){
        echo $e->getMessage().": ".$e->getCode();  
        exit; 
      }
-  $query="CREATE TABLE IF NOT EXISTS rpi (sn INTEGER PRIMARY KEY, 
+  $query="CREATE TABLE IF NOT EXISTS rpi (sn varchar(20), 
                                           arch varchar(20), 
                                           chip varchar(20),
                                           hostname varchar(50), 
                                           ip varchar(16), 
                                           wip varchar(16), 
-                                          puuid varchr(20), 
+                                          puuid varchar(20), 
                                           emac varchar(20), 
                                           wmac varchar(20), 
                                           last datetime default CURRENT_TIMESTAMP  )";
@@ -61,7 +61,11 @@ public function insert($d){
 }
 
 public function update($d){
-
+   $query="update rpi set arch='".$d['arch']."', chip='".$d['chip']."', hostname='".$d['hostname']."', ip='".$d['ip']."', wip='".$d['wip']."', puuid='".$d['puuid']."', emac='".$d['emac']."', wmac='".$d['wmac']."', last=datetime('now') where sn='".$d['sn']."' ";
+   echo $query;
+   try{ $r = $this->db->query($query); }
+   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   return $r;   
 }
 public function set($d){
 
@@ -79,17 +83,26 @@ public function del($sn){
 }
 
 function rpi_show($rpi){
-   $buf="<div class='w3-card rpi' sn='".$rpi["sn"]."'>\n";
+   $tdiff = time() - strtotime($rpi['last']) - date_offset_get(new DateTime);
+   if( $tdiff < 4 ){ $online='rpi-online'; } else { $online='rpi-offline'; }
+   $buf="<div class='w3-card rpi $online' sn='" . $rpi["sn"] . "' >\n";
    foreach( $rpi as $k=>$v){
-       $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
+       $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
+
+   if( $tdiff < 4 ){
+      $buf.="<div style='padding-left:12px;'>ON-Line</div>\n";
+   }else{
+      $buf.="<div style='padding-left:12px;'>OFF-Line: $tdiff s</div>\n";
+   }
+   
    $buf.="</div>\n";
    return $buf;
 }
 
 function rpi_showall($r){
    $buf='';
-   $buf.="<div class='rpi-list'>";
+   $buf.="<div class='rpi-list'>\n";
    foreach( $r as $k=>$rpi){
       $buf .= rpi_show($rpi);
    }
@@ -118,7 +131,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
-         print_r($r);
+         $buf = rpi_showall( array($r['sn']=>$r) );
          break;
       case 'insert':
          $d=array( 'sn'=>$_GET['sn'],
@@ -131,8 +144,11 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'emac'=>$_GET['emac'],
                    'wmac'=>$_GET['wmac']
          );
-         $r=$db->insert($d);
-         echo $r;
+         if( is_array($db->get($d['sn']))){
+            $r=$db->update($d);
+         }else{
+            $r=$db->insert($d);
+         }
          break; 
       case 'delete':
          $db->del($_GET['sn']);
@@ -162,6 +178,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
    <header class="w3-container w3-teal">
    <h1>RPI-hub</h1>
    </header>      
-<?=$buf?>
+<?php if( isset($buf) ) print($buf); ?>
 </body>
 </html>
