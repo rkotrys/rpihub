@@ -12,11 +12,8 @@ public function __construct(){
        $this->db = new PDO('sqlite:'.dirname(__FILE__).'./../db/db.sq3'); 
        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      }
-  catch(PDOException $e){ 
-       echo $e->getMessage().": ".$e->getCode();  
-       exit; 
-     }
-  $query="CREATE TABLE IF NOT EXISTS rpi (sn varchar(20), 
+     catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
+   $query="CREATE TABLE IF NOT EXISTS rpi (sn varchar(20), 
                                           arch varchar(20), 
                                           chip varchar(20),
                                           hostname varchar(50), 
@@ -31,15 +28,12 @@ public function __construct(){
                                           release varchar(20),
                                           last datetime default CURRENT_TIMESTAMP  )";
   try{  $this->db->exec($query); }
-  catch(PDOException $e){ 
-      echo $e->getMessage().": ".$e->getCode(); 
-      exit; 
-      }
+  catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
 }
 public function getall(){
    $query="select * from rpi order by sn";
    try{ $r = $this->db->query($query); }
-   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    $result=array();
    while( $data = $r->fetch(\PDO::FETCH_ASSOC) ){
       $result[$data['sn']] = $data;
@@ -50,7 +44,7 @@ public function getall(){
 public function get($sn){
    $query="select * from rpi where sn='$sn' limit 1";
    try{ $r = $this->db->query($query); }
-   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    $result=array();
    $data = $r->fetch(\PDO::FETCH_ASSOC);
    return $data;   
@@ -66,11 +60,9 @@ public function insert($d){
    $keys[strlen($keys)-1]=' ';
    $values[strlen($values)-1]=' ';
    $query="insert into rpi ( $keys ) values ( $values )";
-   error_log( "INSERT: $query\n", 3, "/srv/www/rpi/error.log" );
-
-   //$query="insert into rpi ( sn, arch, chip, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['chip']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
+   error_log( "INSERT: $query", 3, "/srv/www/rpi/error.log" );
    try{ $r = $this->db->query($query); }
-   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    return $r;   
 }
 
@@ -82,10 +74,8 @@ public function update($d, $key='sn'){
    $values[strlen($values)-1]=' ';
    $query="update rpi set $values where $key=".'"'.$d[$key].'",';
    error_log( "UPDATE: $query", 3, "/srv/www/rpi/error.log" );
-
-   //$query="update rpi set arch='".$d['arch']."', chip='".$d['chip']."', hostname='".$d['hostname']."', ip='".$d['ip']."', wip='".$d['wip']."', puuid='".$d['puuid']."', emac='".$d['emac']."', wmac='".$d['wmac']."', last=datetime('now') where sn='".$d['sn']."' ";
    try{ $r = $this->db->query($query); }
-   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    return $r;   
 }
 
@@ -96,7 +86,7 @@ public function set($d){
 public function del($sn){
    $query="delete from rpi where sn='$sn' limit 1";
    try{ $r = $this->db->query($query); }
-   catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
+   catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    return $r;
 }
 
