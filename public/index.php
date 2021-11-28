@@ -149,6 +149,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'insert':
       case 'post':         
          $df=json_decode(file_get_contents('php://input'), true);
+         foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
          $d=array( 'sn'=>$df['serial'],
                    'arch'=>$df['machine'],
                    'chip'=>$df['chip'],
