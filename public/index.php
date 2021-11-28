@@ -170,9 +170,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $r=$db->insert($d);
          }
-         $x = array( 'status'=>'OK', 'cmd'=>'set to new theme' );
+         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>'set to new theme' );
          $buf = json_encode( $x );
-         print($buf);
+         echo date("Y-m-d H:i:s");
          exit;
          break; 
       case 'delete':
