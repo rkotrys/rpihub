@@ -132,7 +132,6 @@ function rpi_showall($r){
 
 $db = new Datatable();
 
-
 if( isset($_GET['get']) and $_GET['get']!='' ){
    switch ( $_GET['get'] ){
       case 'datetime':
@@ -171,19 +170,19 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $r=$db->insert($d);
          }
-         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>array( 'name'=>'theme', 'value'=>'gold' ) );
+         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>array( 'name'=>'non' ) );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
          exit;
          break; 
       case 'delete':
          $db->del($_GET['sn']);
-         header("Location: /?get=getall;");
+         header("Location: /?get=getall");
          exit;
          break;      
-      case 'show':
-         $buf=
-         $db->del($_GET['sn']);
+      case 'theme':
+         file_put_contents( '/srv/www/rpi/cmd.json', json_encode( array( 'cmd'=>array( 'name'=>'theme', 'value'=>$_GET['face'] ) ) ) );
+         header("Location: /?get=getall");
          break;      
       case 'test':
          $buf="<p>Content</p>";
