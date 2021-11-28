@@ -57,22 +57,39 @@ public function get($sn){
 }
 
 public function insert($d){
-   $query="insert into rpi ( sn, arch, chip, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['chip']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
+   $keys="";
+   $values="";
+   foreach( $d as $k=>$v){
+      $keys.=" $k,";
+      $values.=' "'.$v.'",';
+   }
+   $keys[strlen($keys)-1]=' ';
+   $values[strlen($values)-1]=' ';
+   $query="insert into rpi ( $keys ) values ( $values )";
+   echo "INSERT: $query <br>\n";
+   //$query="insert into rpi ( sn, arch, chip, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['chip']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
    return $r;   
 }
 
-public function update($d){
-   $query="update rpi set arch='".$d['arch']."', chip='".$d['chip']."', hostname='".$d['hostname']."', ip='".$d['ip']."', wip='".$d['wip']."', puuid='".$d['puuid']."', emac='".$d['emac']."', wmac='".$d['wmac']."', last=datetime('now') where sn='".$d['sn']."' ";
+public function update($d, $key='sn'){
+   $values="";
+   foreach( $d as $k=>$v){
+      $values.=" $k=".'"'.$v.'"'.",";
+   }
+   $values[strlen($values)-1]=' ';
+   $query="update rpi set $values where $key=".'"'.$d[$key].'",';
+   echo "UPDATE: $query <br>\n";
+   //$query="update rpi set arch='".$d['arch']."', chip='".$d['chip']."', hostname='".$d['hostname']."', ip='".$d['ip']."', wip='".$d['wip']."', puuid='".$d['puuid']."', emac='".$d['emac']."', wmac='".$d['wmac']."', last=datetime('now') where sn='".$d['sn']."' ";
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ echo $e->getMessage().": ".$e->getCode()."\nQuery: $query"; exit; }
    return $r;   
 }
+
 public function set($d){
 
 }
-
 
 public function del($sn){
    $query="delete from rpi where sn='$sn' limit 1";
