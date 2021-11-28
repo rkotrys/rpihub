@@ -147,6 +147,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $buf = rpi_showall( array($r['sn']=>$r) );
          break;
       case 'post':         
+         echo date("Y-m-d H:i:s");
          $df=json_decode(file_get_contents('php://input'), true);
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
          $df['model']=str_replace("Raspberry Pi","RPi",$df['model']);
