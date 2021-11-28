@@ -25,6 +25,10 @@ public function __construct(){
                                           puuid varchar(20), 
                                           emac varchar(20), 
                                           wmac varchar(20), 
+                                          model varchar(50),
+                                          memtotal varchar(20),
+                                          `version` varchar(20),
+                                          release varchar(20),
                                           last datetime default CURRENT_TIMESTAMP  )";
   try{  $this->db->exec($query); }
   catch(PDOException $e){ 
@@ -80,20 +84,28 @@ public function del($sn){
 
 }
 
+function totimedistance($sec){
+   $buf='';
+   $d=(int)($sec/86400);
+   if( $d>0 ) { $sec=$sec-($d*86400); $buf.="$d days "; }
+   $h=(int)($sec/3600);
+   if( $h>0 ) { $sec=$sec-($h*3600); $buf.="$h H "; }
+   $m=(int)($sec/60);
+   if( $m>0 ) { $sec=$sec-($m*60); $buf.="$m min "; }
+   $buf.="$sec s";
+   return $buf;
+}
+
 function rpi_show($rpi){
    $tdiff = time() - strtotime($rpi['last']) - date_offset_get(new DateTime);
    if( $tdiff < 4 ){ $online='rpi-online'; } else { $online='rpi-offline'; }
    $buf="<div class='w3-card rpi $online' sn='" . $rpi["sn"] . "' >\n";
+   $buf.="<div class='rpi-header'>".$rpi['model']."</div>\n";
    foreach( $rpi as $k=>$v){
+      if( $k=='model') continue;
        $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
-
-   if( $tdiff < 4 ){
-      $buf.="<div style='padding-left:12px;'>ON-Line</div>\n";
-   }else{
-      $buf.="<div style='padding-left:12px;'>OFF-Line: $tdiff s</div>\n";
-   }
-   
+   $buf.="<div class='rpi-status' >".($tdiff < 4)?"ON-Line":"OFF-Line: ".totimedistance($tdiff)."</div>\n";
    $buf.="</div>\n";
    return $buf;
 }
