@@ -171,7 +171,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $r=$db->insert($d);
          }
-         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>'set to new theme' );
+         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>array( 'name'=>'theme', 'value'=>'gold' ) );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
          exit;
