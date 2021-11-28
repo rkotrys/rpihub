@@ -146,7 +146,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $r=$db->get($_GET['sn']);
          $buf = rpi_showall( array($r['sn']=>$r) );
          break;
-      case 'insert':
       case 'post':         
          $df=json_decode(file_get_contents('php://input'), true);
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
@@ -163,13 +162,16 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'version'=>$df['version'],
                    'memtotal'=>$df['memtotal'],
                    'model'=>$df['model'],
-                   'wmac'=>$df['wmac']
+                   'wmac'=>$df['wmac'],
+                   'theme'=>$df['theme']
          );
          if( is_array($db->get($d['sn']))){
             $r=$db->update($d);
          }else{
             $r=$db->insert($d);
          }
+         $buf = json_encode( array( 'status'=>'OK', 'cmd'=>'set to new theme' ));
+         print($buf);
          exit;
          break; 
       case 'delete':
