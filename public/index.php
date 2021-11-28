@@ -60,7 +60,6 @@ public function insert($d){
    $keys[strlen($keys)-1]=' ';
    $values[strlen($values)-1]=' ';
    $query="insert into rpi ( $keys ) values ( $values )";
-   error_log( "INSERT: $query", 3, "/srv/www/rpi/error.log" );
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    return $r;   
@@ -73,7 +72,6 @@ public function update($d, $key='sn'){
    }
    $values[strlen($values)-1]=' ';
    $query="update rpi set $values where $key=".'"'.$d[$key].'"';
-   error_log( "UPDATE: $query", 3, "/srv/www/rpi/error.log" );
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    return $r;   
