@@ -113,7 +113,7 @@ function rpi_show($rpi){
       if( $k=='model') continue;
        $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
-   $buf.="<div class='rpi-status' >".($online=='rpi-online')?"ON-Line":"OFF-Line: ".totimedistance($tdiff)."</div>\n";
+   $buf.="<div class='rpi-status' >".(($online=='rpi-online')?"ON-Line":"OFF-Line: ".totimedistance($tdiff))."</div>\n";
    $buf.="</div>\n";
    return $buf;
 }
