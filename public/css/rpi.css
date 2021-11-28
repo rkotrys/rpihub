@@ -29,14 +29,14 @@ body {
     align-items: stretch;
     width: 100%;
 }
-.rpi-header {
+.rpi > div.rpi-header {
     padding: 5px 0;
     width: 100%;
     border: none;
     display:block;
     text-align:center;
 }
-.rpi-status {
+.rpi > div.rpi-status {
     padding: 0 0 0 10px;
     width: 100%;
     border: none;
