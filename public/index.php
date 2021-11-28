@@ -66,7 +66,7 @@ public function insert($d){
    $keys[strlen($keys)-1]=' ';
    $values[strlen($values)-1]=' ';
    $query="insert into rpi ( $keys ) values ( $values )";
-   error_log( "INSERT: $query <br>\n", 3, "/srv/www/rpi/error.log" );
+   error_log( "INSERT: $query\n", 3, "/srv/www/rpi/error.log" );
 
    //$query="insert into rpi ( sn, arch, chip, hostname, ip, wip, puuid, emac, wmac ) values ('".$d['sn']."', '".$d['arch']."', '".$d['chip']."', '".$d['hostname']."', '".$d['ip']."', '".$d['wip']."', '".$d['puuid']."', '".$d['emac']."', '".$d['wmac']."')";
    try{ $r = $this->db->query($query); }
@@ -81,7 +81,7 @@ public function update($d, $key='sn'){
    }
    $values[strlen($values)-1]=' ';
    $query="update rpi set $values where $key=".'"'.$d[$key].'",';
-   error_log( "UPDATE: $query <br>\n", 3, "/srv/www/rpi/error.log" );
+   error_log( "UPDATE: $query", 3, "/srv/www/rpi/error.log" );
 
    //$query="update rpi set arch='".$d['arch']."', chip='".$d['chip']."', hostname='".$d['hostname']."', ip='".$d['ip']."', wip='".$d['wip']."', puuid='".$d['puuid']."', emac='".$d['emac']."', wmac='".$d['wmac']."', last=datetime('now') where sn='".$d['sn']."' ";
    try{ $r = $this->db->query($query); }
