@@ -170,7 +170,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $r=$db->insert($d);
          }
-         $buf = json_encode( array( 'status'=>'OK', 'cmd'=>'set to new theme' ) );
+         $x = array( 'status'=>'OK', 'cmd'=>'set to new theme' );
+         $buf = json_encode( $x );
          print($buf);
          exit;
          break; 
