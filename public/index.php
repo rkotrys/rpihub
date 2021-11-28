@@ -150,7 +150,6 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $df=json_decode(file_get_contents('php://input'), true);
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
          $df['model']=str_replace("Raspberry Pi","RPi",$df['model']);
-         echo date("Y-m-d H:i:s");
          $d=array( 'sn'=>$df['serial'],
                    'arch'=>$df['machine'],
                    'chip'=>$df['chip'],
@@ -171,6 +170,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $r=$db->insert($d);
          }
+         echo date("Y-m-d H:i:s");
+
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>'set to new theme' );
          $buf = json_encode( $x );
          echo date("Y-m-d H:i:s");
