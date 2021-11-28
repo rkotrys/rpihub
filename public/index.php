@@ -150,6 +150,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'post':         
          $df=json_decode(file_get_contents('php://input'), true);
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
+         $df['model']=str_replace("Raspberry Pi","RPi",$df['model']);
          $d=array( 'sn'=>$df['serial'],
                    'arch'=>$df['machine'],
                    'chip'=>$df['chip'],
