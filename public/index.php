@@ -169,10 +169,12 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $rpi = $db->get($d['sn']);
          if( is_array($rpi) and count($rpi)>0 ){
             $r=$db->update($d);
+            error_log( "TEST: update", 3, "/srv/www/rpi/error.log" );
          }else{
             $d['cmd']=json_encode( array( 'name'=>'none' ) );
             $r=$db->insert($d);
             $rpi=$d;
+            error_log( "TEST: insert", 3, "/srv/www/rpi/error.log" );
          }
          $cmd = json_decode( $rpi['cmd'] );
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
