@@ -116,7 +116,7 @@ function rpi_show($rpi){
        $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
    $buf.="<div class='rpi-status' >".(($online=='rpi-online')?"ON-Line":"OFF-Line: ".totimedistance($tdiff)."\n<br><a href='http://rpi.ontime24.pl/?get=delete&sn=".$rpi["sn"]." '>remove</a>")."</div>\n";
-
+   $buf.="<div class='rpi-status' ><a href='?cmd=edit&sn=".$rpi['sn']."'>Configure</a></div>\n";
    $buf.="</div>\n";
    return $buf;
 }
@@ -196,25 +196,28 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          exit;
          break;      
       case 'hostname':   // set 'hostname' cmd
-            if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 and $_POST['hostname']!='' ){
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 and $_POST['hostname']!='' ){
                $cmd=json_encode( array( 'name'=>'hostname', 'value'=>$_POST['hostname'] ) );
                $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
-            }
-            header("Location: /?get=getall");
-            exit;
-            break;      
-      case 'edit':  // show 'edit' form
-            if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 ){
-               $buf="<p></p>";
-            }
-            break;
-      case 'test':
-         $buf="<ol>\n";
-         foreach( array('blue','gold','red','green','purple','silver') as $face ){
-            $buf.="<ul><a href='?get=theme&face=$face' >$face</a></ul>\n";
          }
-         $buf.="</ol>\n";
-         $buf.="<p><a href='?get=getall'>Go back to RPi list</a></p>\n";
+         header("Location: /?get=getall");
+         exit;
+         break;      
+      case 'edit':  // show 'edit' form
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){
+            $buf="<h2>RPi SN: ".$rpi['sn']."</h2>\n";
+            $buf="<ol>\n";
+            foreach( array('blue','gold','red','green','purple','silver') as $face ){
+               $buf.="<ul><a href='?get=theme&face=$face' >$face</a></ul>\n";
+            }
+            $buf.="</ol>\n";
+            $buf.="<p><a href='?get=getall'>Go back to RPi list</a></p>\n";
+         }
+         break;
+      case 'test':
+         $buf="<p>Test</p>";
          break;
 
     default:
