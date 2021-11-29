@@ -27,6 +27,7 @@ public function __construct(){
                                           `version` varchar(20),
                                           release varchar(20),
                                           theme varchar(20),
+                                          cmd text,
                                           last datetime default CURRENT_TIMESTAMP  )";
   try{  $this->db->exec($query); }
   catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
@@ -165,7 +166,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wmac'=>$df['wmac'],
                    'theme'=>$df['theme']
          );
-         if( is_array($db->get($d['sn']))){
+         if( is_array($rpi = $db->get($d['sn']))){
             $r=$db->update($d);
          }else{
             $r=$db->insert($d);
