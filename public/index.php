@@ -172,6 +172,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }else{
             $d['cmd']=json_encode( array( 'name'=>'none' ) );
             $r=$db->insert($d);
+            $rpi=$d;
          }
          $cmd = json_decode( $rpi['cmd'] );
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
