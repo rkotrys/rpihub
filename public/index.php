@@ -166,14 +166,19 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wmac'=>$df['wmac'],
                    'theme'=>$df['theme']
          );
-         if( is_array($rpi = $db->get($d['sn']))){
+         $rpi = $db->get($d['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){
             $r=$db->update($d);
          }else{
+            $d['cmd']=json_encode( array( 'name'=>'none' ) );
             $r=$db->insert($d);
          }
-         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>array( 'name'=>'non' ) );
+         $cmd = json_decode( $rpi['cmd'] );
+         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
+         if( $cmd['name']!='none' )
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>json_encode( array( 'name'=>'none' ) ) );
          exit;
          break; 
       case 'delete':
@@ -181,12 +186,34 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          header("Location: /?get=getall");
          exit;
          break;      
-      case 'theme':
-         file_put_contents( '/srv/www/rpi/cmd.json', json_encode( array( 'cmd'=>array( 'name'=>'theme', 'value'=>$_GET['face'] ) ) ) );
+      case 'theme':   // set 'theme' cmd
+         if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 and $_GET['face']!='' ){
+            $cmd=json_encode( array( 'name'=>'theme', 'value'=>$_GET['face'] ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
          header("Location: /?get=getall");
+         exit;
          break;      
+      case 'hostname':   // set 'hostname' cmd
+            if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 and $_POST['hostname']!='' ){
+               $cmd=json_encode( array( 'name'=>'hostname', 'value'=>$_POST['hostname'] ) );
+               $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+            }
+            header("Location: /?get=getall");
+            exit;
+            break;      
+      case 'edit':  // show 'edit' form
+            if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 ){
+               $buf="<p></p>";
+            }
+            break;
       case 'test':
-         $buf="<p>Content</p>";
+         $buf="<ol>\n";
+         foreach( array('blue','gold','red','green','purple','silver') as $face ){
+            $buf.="<ul><a href='?get=theme&face=$face' >$face</a></ul>\n";
+         }
+         $buf.="</ol>\n";
+         $buf.="<p><a href='?get=getall'>Go back to RPi list</a></p>\n";
          break;
 
     default:
