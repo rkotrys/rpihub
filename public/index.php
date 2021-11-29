@@ -177,8 +177,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
-         if( $cmd['name']!='none' )
-            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>json_encode( array( 'name'=>'none' ) ) );
+         if( $cmd['name']!='none' ){
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>json_encode( array( 'name'=>'none' ) ) ) );
+         }
          exit;
          break; 
       case 'delete':
