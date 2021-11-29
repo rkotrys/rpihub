@@ -172,17 +172,17 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $r=$db->update($d);
             error_log( "TEST: update", 3, "/srv/www/rpi/error.log" );
          }else{
-            $d['cmd']=json_encode( array( 'name'=>'none' ) );
+            $d['cmd']=base64_encode(json_encode( array( 'name'=>'none' ) ));
             $r=$db->insert($d);
             $rpi=$d;
             error_log( "TEST: insert", 3, "/srv/www/rpi/error.log" );
          }
-         $cmd = json_decode( $rpi['cmd'] );
+         $cmd = json_decode( base64_decode($rpi['cmd']) );
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
          if( $cmd['name']!='none' ){
-            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>json_encode( array( 'name'=>'none' ) ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>base64_encode(json_encode( array( 'name'=>'none' ) ) ) ) );
          }
          exit;
          break; 
