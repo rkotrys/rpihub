@@ -130,7 +130,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'getall':
          $r = $db->getall();
          $buf = view('rpi_list', array( 'rpi_list'=>$r ), true );
-         $onload="onload='setInterval( function(){windows.location.assign(\"http://rpi.ontime24.pl/?get=getall \"}, 3000);";
+         $onload="onload='setInterval( function(){windows.location.assign(\"http://rpi.ontime24.pl/?get=getall \");}, 3000);";
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
