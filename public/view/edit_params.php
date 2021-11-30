@@ -20,7 +20,7 @@
         <header>
             <h3>Set new hostname</h3>
         </header>
-        <form method="get" action="/?set=hostname&sn=<?=$rpi['sn']?>">
+        <form method="get" action="" >
             <input name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
             <input type="hidden" name="set" value="hostname" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
