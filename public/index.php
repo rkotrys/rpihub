@@ -220,7 +220,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){
             $buf="<div class='w3-container'>";
-            $buf=."<header><h2>Set  RPi SN: ".$rpi['sn']." parameters</h2></header>\n";
+            $buf.="<header><h2>Set  RPi SN: ".$rpi['sn']." parameters</h2></header>\n";
             $buf.="<article><ol>\n";
             foreach( array('blue','gold','red','green','purple','black') as $face ){
                $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></li>\n";
