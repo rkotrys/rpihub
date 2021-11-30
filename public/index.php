@@ -50,7 +50,7 @@ public function get($sn){
    catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    $data = $r->fetch(\PDO::FETCH_ASSOC);
    error_log( "TEST: get() fetch:".print_r($data, true)."\n", 3, "/srv/www/rpi/error.log" );
-   return $data[0];   
+   return $data;   
 }
 
 public function insert($d){
@@ -169,7 +169,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'theme'=>$df['theme']
          );
          $rpi = $db->get($d['sn']);
-         error_log( "TEST: get(): ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
+         error_log( "TEST: post rpi: ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
          if( is_array($rpi) and count($rpi)>0 ){
             $r=$db->update($d);
             error_log( "TEST: update\n", 3, "/srv/www/rpi/error.log" );
