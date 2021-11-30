@@ -12,6 +12,15 @@
         <?php } ?>    
         </ol>
     </article>
+    <article>
+        <header>
+            <h3>Set new hostname</h3>
+        </header>
+        <form method="get" action="/?get=sethostname&sn=<?=$rpi['sn']?>">
+            <input name="hostname" id="hostname" type="text" >
+            <button type="submit" name="submit" value="submit" >
+        </form>
+    <article>
     <footer>
         <p><a href='?get=getall'>Go back to RPi list</a></p>
     </footer>
