@@ -159,8 +159,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
+         error_log( "TEST: get: ".print_r($r,true)."\n", 3, "/srv/www/rpi/error.log" );
          //$buf = rpi_showall( array($r['sn']=>$r) );
-         $buf = view( 'rpi_details', array('r'=>$r) );
+         $buf = view( 'rpi_details', array('r'=>$r), true );
          break;
       case 'post':         
          //error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
