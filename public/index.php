@@ -221,6 +221,7 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
          $rpi=$db->get($_GET['sn']);
          error_log( "TEST: hostname: ".print_r($rpi,true)."\n", 3, "/srv/www/rpi/error.log" );
          if( is_array($rpi) and count($rpi)>1 and isset( $_GET['hostname']) and count($_GET['hostname'])>2 ){
+            error_log( "TEST: hostname: ".$_GET['hostname']."\n", 3, "/srv/www/rpi/error.log" );
             $cmd=base64_encode( json_encode( array( 'name'=>'hostname', 'value'=>$_GET['hostname'], 'sn'=>$rpi['sn'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
             error_log( "TEST: hostname update: $cmd\n", 3, "/srv/www/rpi/error.log" );
