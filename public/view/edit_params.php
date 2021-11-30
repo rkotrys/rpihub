@@ -9,6 +9,7 @@
         <ol>
         <?php foreach( $faces as $face ) { ?>    
             <li><a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+        <?php } ?>    
         </ol>
     </article>
     <footer>
