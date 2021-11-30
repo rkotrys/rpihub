@@ -217,7 +217,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
 
 if( isset($_GET['set'] ) and $_GET['set']!='' ){
    switch ( $_GET['set'] ){
-      case: 'hostname':
+      case 'hostname':
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>1 and isset( $_GET['hostname']) and count($_GET['hostname'])>2 ){
             $cmd=base64_encode( json_encode( array( 'name'=>'hostname', 'value'=>$_GET['hostname'], 'sn'=>$rpi['sn'] ) ) );
