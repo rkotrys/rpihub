@@ -11,7 +11,7 @@
 <?php foreach( $rpi as $k=>$v) { if( $k=='model') continue; ?>
     <div class='flex-container  rpi-<?=$k?>'>
         <div class='rpikey'><?=$k?> :</div>
-        <div class='rpivalue'><?=$v?></div>
+        <div class='rpivalue'><?=($k!='cmd')?$v:'***';?></div>
     </div>
 <?php  } ?>
     <div class='rpi-status' >
