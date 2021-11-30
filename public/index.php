@@ -114,10 +114,12 @@ function rpi_show($rpi){
    $buf.="<div class='rpi-header'>".$rpi['model']."</div>\n";
    foreach( $rpi as $k=>$v){
       if( $k=='model') continue;
-       $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
+         $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
    $buf.="<div class='rpi-status' >".(($online=='rpi-online')?"ON-Line":"OFF-Line: ".totimedistance($tdiff)."\n<br><a href='http://rpi.ontime24.pl/?get=delete&sn=".$rpi["sn"]." '>remove</a>")."</div>\n";
-   $buf.="<div class='rpi-status' ><a href='?cmd=edit&sn=".$rpi['sn']."'>Configure</a></div>\n";
+   if( $online=='rpi-online' ){   
+      $buf.="<div class='rpi-status' ><a href='?get=edit&sn=".$rpi['sn']."'>Configure</a></div>\n";
+   }
    $buf.="</div>\n";
    return $buf;
 }
