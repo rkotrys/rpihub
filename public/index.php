@@ -221,7 +221,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          if( is_array($rpi) and count($rpi)>0 ){
             $buf="<div class='w3-container'>";
             $buf.="<header><h2>Set parameters of RPi SN: ".$rpi['sn']."</h2></header>\n";
-            $buf.="<article><ol>\n";
+            $buf.="<article><header><h3>Clock face color</h3></header>\n";
+            $buf.="<ol>\n";
             foreach( array('blue','gold','red','green','purple','black') as $face ){
                $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></li>\n";
             }
