@@ -168,6 +168,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'theme'=>$df['theme']
          );
          $rpi = $db->get($d['sn']);
+         error_log( "TEST: get(): ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
          if( is_array($rpi) and count($rpi)>0 ){
             $r=$db->update($d);
             error_log( "TEST: update\n", 3, "/srv/www/rpi/error.log" );
