@@ -3,10 +3,10 @@
    if( $tdiff < 4 ){ 
        $online=true;  
     } else { 
-        $online=false; 
+       $online=false; 
     }
 ?>
-<div class='w3-card rpi <?=($rpionline)?'rpi-online':'rpi-offline';?>' sn='<?=$rpi["sn"]?>' >
+<div class='w3-card rpi <?=($online)?'rpi-online':'rpi-offline';?>' sn='<?=$rpi["sn"]?>' >
 <div class='rpi-header'><?=$rpi['model']?></div>
 <?php foreach( $rpi as $k=>$v) { if( $k=='model') continue; ?>
     <div class='flex-container  rpi-<?=$k?>'>
