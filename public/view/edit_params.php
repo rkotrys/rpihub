@@ -9,9 +9,9 @@
         <ol>
         <?php foreach( $faces as $face ) { ?>    
             <?php if( $face==$rpi['face'] ){ ?>
-                <li><a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+                <li><a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a> <span style="background-color: <?=$face?>;color:<?=$face?>"> ***** </span></li>
             <?php } else { ?>
-                <li><a style="background-color: <?=$face?>;" href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+                <li><a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a> <span style="background-color: <?=$face?>;color:<?=$face?>"> ***** </span></li>
             <?php } ?>    
         <?php } ?>    
         </ol>
