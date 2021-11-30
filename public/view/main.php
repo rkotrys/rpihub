@@ -11,7 +11,7 @@
        }
    </script>    
 </head>
-<body onload="do_onload()" >
+<body <?php if() print( 'onload="do_onload()"' ); ?> >
    <header class="w3-container w3-teal">
    <h1>RPI-hub</h1>
    </header>      
