@@ -194,28 +194,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          header("Location: /?get=getall");
          exit;
          break;      
-      case 'hostname':   // set 'hostname' cmd
-         $rpi=$db->get($_GET['sn']);
-         if( is_array($rpi) and count($rpi)>0 and $_POST['hostname']!='' ){
-               $cmd=json_encode( array( 'name'=>'hostname', 'value'=>$_POST['hostname'] ) );
-               $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
-         }
-         header("Location: /?get=getall");
-         exit;
-         break;      
       case 'edit':  // show 'edit' form
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){
-            $buf="<div class='w3-container'>";
-            $buf.="<header><h2>Set parameters of RPi SN: ".$rpi['sn']."</h2></header>\n";
-            $buf.="<article><header><h3>Clock face color</h3></header>\n";
-            $buf.="<ol>\n";
-            foreach( array('blue','gold','red','green','purple','black') as $face ){
-               $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi['sn']."' >$face</a></li>\n";
-            }
-            $buf.="</ol></article>\n";
-            $buf.="<hr><footer><p><a href='?get=getall'>Go back to RPi list</a></p></footer>\n";
-            $buf.="</div>";
             $buf= view( 'edit_params', 
                   array( 'rpi'=>$rpi, 
                      'faces'=>array('blue','gold','red','green','purple','black')
@@ -233,4 +214,23 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
 
    }
 }
+
+if( isset($_GET['set'] ) and $_GET['set']!='' ){
+   switch ( $_GET['set'] ){
+      case: 'hostname':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>1 and isset( $_GET['hostname']) and count($_GET['hostname'])>2 ){
+            $cmd=base64_encode( json_encode( array( 'name'=>'hostname', 'value'=>$_GET['hostname'], 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+            error_log( "TEST: hostname update: $cmd\n", 3, "/srv/www/rpi/error.log" );
+         }
+      header("Location: /?get=getall");
+      exit;
+      break;      
+
+      default:
+         $buf="<h1>RPI: bad token</h1>";
+   }   
+}
+
 view('main', array('content'=>$buf, 'do_reload'=>$do_reload ) );
