@@ -149,7 +149,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $buf = rpi_showall( array($r['sn']=>$r) );
          break;
       case 'post':         
-         error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
+         //error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
          $df=json_decode(file_get_contents('php://input'), true);
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
          $df['model']=str_replace("Raspberry Pi","RPi",$df['model']);
@@ -169,25 +169,25 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'theme'=>$df['theme']
          );
          $rpi = $db->get($d['sn']);
-         error_log( "TEST: post rpi: ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
+         //error_log( "TEST: post rpi: ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
          if( is_array($rpi) and count($rpi)>0 ){
             $r=$db->update($d);
-            error_log( "TEST: update\n", 3, "/srv/www/rpi/error.log" );
+            //error_log( "TEST: update\n", 3, "/srv/www/rpi/error.log" );
          }else{
             $d['cmd']=base64_encode(json_encode( array( 'name'=>'none' ) ));
             $r=$db->insert($d);
             $rpi=$d;
-            error_log( "TEST: insert\n", 3, "/srv/www/rpi/error.log" );
+            //error_log( "TEST: insert\n", 3, "/srv/www/rpi/error.log" );
          }
-         $json_str=base64_decode($rpi['cmd']);
-         $cmd = json_decode( $json_str );
-         error_log( "TEST: JSON_decode: $json_str ".print_r($cmd,true)."\n", 3, "/srv/www/rpi/error.log" );
-         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
+         $cmd=json_decode(base64_decode($rpi['cmd']),true);
+         error_log( "TEST: cmd: ".print_r($cmd,true)." \n", 3, "/srv/www/rpi/error.log" );
+         $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
          if( $cmd['name']!='none' ){
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>base64_encode(json_encode( array( 'name'=>'none' ) ) ) ) );
          }
+         
          exit;
          break; 
       case 'delete':
