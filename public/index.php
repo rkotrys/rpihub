@@ -107,33 +107,6 @@ function totimedistance($sec){
    return $buf;
 }
 
-function rpi_show($rpi){
-   $tdiff = time() - strtotime($rpi['last']) - date_offset_get(new DateTime);
-   if( $tdiff < 4 ){ $online='rpi-online'; } else { $online='rpi-offline'; }
-   $buf="<div class='w3-card rpi $online' sn='" . $rpi["sn"] . "' >\n";
-   $buf.="<div class='rpi-header'>".$rpi['model']."</div>\n";
-   foreach( $rpi as $k=>$v){
-      if( $k=='model') continue;
-         $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
-   }
-   $buf.="<div class='rpi-status' >".(($online=='rpi-online')?"ON-Line":"OFF-Line: ".totimedistance($tdiff)."\n<br><a href='http://rpi.ontime24.pl/?get=delete&sn=".$rpi["sn"]." '>remove</a>")."</div>\n";
-   if( $online=='rpi-online' ){   
-      $buf.="<div class='rpi-status' ><a href='?get=edit&sn=".$rpi['sn']."'>Configure</a></div>\n";
-   }
-   $buf.="</div>\n";
-   return $buf;
-}
-
-function rpi_showall($r){
-   $buf='';
-   $buf.="<div class='rpi-list'>\n";
-   foreach( $r as $k=>$rpi){
-      $buf .= rpi_show($rpi);
-   }
-   $buf.="</div>";
-   return $buf;
-}
-
 function view($view,$data=NULL,$to_str=false){
    if($data) extract($data);
    if( $to_str ) ob_start();
@@ -159,8 +132,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
-         error_log( "TEST: get: ".print_r($r,true)."\n", 3, "/srv/www/rpi/error.log" );
-         //$buf = rpi_showall( array($r['sn']=>$r) );
+         //error_log( "TEST: get: ".print_r($r,true)."\n", 3, "/srv/www/rpi/error.log" );
          $buf = view( 'rpi_details', array('rpi'=>$r), true );
          break;
       case 'post':         
