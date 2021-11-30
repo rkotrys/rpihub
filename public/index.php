@@ -233,4 +233,4 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
 
    }
 }
-view('main', array('content'=>$buf, 'reload'=>$do_reload ) );
+view('main', array('content'=>$buf, 'do_reload'=>$do_reload ) );
