@@ -229,7 +229,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $buf.="<article><header><h3>Clock face color</h3></header>\n";
             $buf.="<ol>\n";
             foreach( array('blue','gold','red','green','purple','black') as $face ){
-               $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></li>\n";
+               $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi['sn']."' >$face</a></li>\n";
             }
             $buf.="</ol></article>\n";
             $buf.="<hr><footer><p><a href='?get=getall'>Go back to RPi list</a></p></footer>\n";
