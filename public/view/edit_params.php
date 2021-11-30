@@ -18,7 +18,7 @@
         </header>
         <form method="get" action="/?set=hostname&sn=<?=$rpi['sn']?>">
             <input name="hostname" id="hostname" type="text" >
-            <button type="submit" name="submit" value="submit" >
+            <button type="submit" name="submit" value="submit" >Submit</button>
         </form>
     <article>
     <footer>
