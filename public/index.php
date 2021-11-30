@@ -45,10 +45,12 @@ public function getall(){
 
 public function get($sn){
    $query="select * from rpi where sn='$sn' limit 1";
+   error_log( "TEST: query get(): $query\n", 3, "/srv/www/rpi/error.log" );
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    $result=array();
    $data = $r->fetch(\PDO::FETCH_ASSOC);
+   error_log( "TEST: responce get() ".print_r($data)."\n", 3, "/srv/www/rpi/error.log" );
    return $data[0];   
 }
 
