@@ -136,7 +136,11 @@ function rpi_showall($r){
 
 function view($view,$data=NULL){
    if($data) extract($data);
+   ob_start();
    include("view/$view.php");
+   $out = ob_get_contents();
+   ob_end_clean();
+   return $out;
 }
 
 $db = new Datatable();
@@ -234,11 +238,11 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $buf.="</ol></article>\n";
             $buf.="<hr><footer><p><a href='?get=getall'>Go back to RPi list</a></p></footer>\n";
             $buf.="</div>";
-            view( 'edit_params', 
-                   array( 'rpi'=>$rpi, 
-                          'faces'=>array('blue','gold','red','green','purple','black')
-                        ) 
-               );
+            $buf= view( 'edit_params', 
+                  array( 'rpi'=>$rpi, 
+                     'faces'=>array('blue','gold','red','green','purple','black')
+                  ) 
+            );
          }
          break;
       case 'test':
