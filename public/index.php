@@ -100,7 +100,7 @@ function totimedistance($sec){
    $d=(int)($sec/86400);
    if( $d>0 ) { $sec=$sec-($d*86400); $buf.="$d days "; }
    $h=(int)($sec/3600);
-   if( $h>0 ) { $sec=$sec-($h*3600); $buf.="$h H "; }
+   if( $h>0 ) { $sec=$sec-($h*3600); $buf.="$h h "; }
    $m=(int)($sec/60);
    if( $m>0 ) { $sec=$sec-($m*60); $buf.="$m min "; }
    $buf.="$sec s";
@@ -134,13 +134,15 @@ function rpi_showall($r){
    return $buf;
 }
 
-function view($view,$data=NULL){
+function view($view,$data=NULL,$to_str=false){
    if($data) extract($data);
-   ob_start();
+   if( $to_str ) ob_start();
    include("view/$view.php");
-   $out = ob_get_contents();
-   ob_end_clean();
-   return $out;
+   if( $to_str ) {
+      $out = ob_get_contents();
+      ob_end_clean();
+      return $out;
+   }   
 }
 
 $db = new Datatable();
