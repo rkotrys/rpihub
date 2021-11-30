@@ -9,7 +9,7 @@
         <ol>
         <?php foreach( $faces as $face ) { ?>    
             <?php if( $face==$rpi['theme'] ){ ?>
-                <li><span style="background-color: <?=$face?>;color:<?=$face?>;box-shadow:#222;"> ***** </span> <a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+                <li><span style="background-color: <?=$face?>;color:<?=$face?>;box-shadow:2px 2px 3px #666;"> ***** </span> <a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
             <?php } else { ?>
                 <li><span style="background-color: <?=$face?>;color:<?=$face?>;"> ***** </span> <a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a> </li>
             <?php } ?>    
