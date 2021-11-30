@@ -219,10 +219,11 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
    switch ( $_GET['set'] ){
       case 'hostname':
          $rpi=$db->get($_GET['sn']);
-         error_log( "TEST: hostname: ".print_r($_GET,true)."\n", 3, "/srv/www/rpi/error.log" );
-         error_log( "TEST: hostname: ".print_r($rpi,true)."\n", 3, "/srv/www/rpi/error.log" );
-         if( is_array($rpi) and (count($rpi)>1) and isset( $_GET['hostname']) and (count($_GET['hostname'])>2) ){
-            error_log( "TEST: hostname: ".print_r($_GET,true)."\n", 3, "/srv/www/rpi/error.log" );
+         error_log( "TEST hostname 1: ".print_r($_GET,true)."\n", 3, "/srv/www/rpi/error.log" );
+         error_log( "TEST hostname 2: ".print_r($rpi,true)."\n", 3, "/srv/www/rpi/error.log" );
+         //if( is_array($rpi) and (count($rpi)>1) and isset( $_GET['hostname']) and (count($_GET['hostname'])>2) ){
+         if( is_array($rpi) ){   
+            error_log( "TEST hostname 3: ".print_r($_GET,true)."\n", 3, "/srv/www/rpi/error.log" );
             $cmd=base64_encode( json_encode( array( 'name'=>'hostname', 'value'=>$_GET['hostname'], 'sn'=>$rpi['sn'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
             error_log( "TEST: hostname update: $cmd\n", 3, "/srv/www/rpi/error.log" );
