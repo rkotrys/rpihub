@@ -49,7 +49,7 @@ public function get($sn){
    catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    $result=array();
    $data = $r->fetch(\PDO::FETCH_ASSOC);
-   return $data;   
+   return $data[0];   
 }
 
 public function insert($d){
