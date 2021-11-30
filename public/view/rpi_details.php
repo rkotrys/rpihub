@@ -28,5 +28,4 @@
         <a href='http://rpi.ontime24.pl/?get=delete&sn=<?=$rpi["sn"]?>' >remove</a>
     <?php } ?>   
     </div>
-    </div>
 </div>
