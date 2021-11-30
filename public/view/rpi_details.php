@@ -29,9 +29,4 @@
     <?php } ?>   
     </div>
     </div>
-
-   if( $online=='rpi-online' ){   
-      $buf.="<div class='rpi-status' >\n";
-   }
-
 </div>
