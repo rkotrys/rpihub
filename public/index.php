@@ -159,7 +159,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
-         $buf = rpi_showall( array($r['sn']=>$r) );
+         //$buf = rpi_showall( array($r['sn']=>$r) );
+         $buf = view( 'rpi_details', array('r'=>$r) )
          break;
       case 'post':         
          //error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
@@ -243,7 +244,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $buf= view( 'edit_params', 
                   array( 'rpi'=>$rpi, 
                      'faces'=>array('blue','gold','red','green','purple','black')
-                  ) 
+                  ),
+                  true
             );
          }
          break;
