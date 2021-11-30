@@ -160,7 +160,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'get':
          $r=$db->get($_GET['sn']);
          //$buf = rpi_showall( array($r['sn']=>$r) );
-         $buf = view( 'rpi_details', array('r'=>$r) )
+         $buf = view( 'rpi_details', array('r'=>$r) );
          break;
       case 'post':         
          //error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
