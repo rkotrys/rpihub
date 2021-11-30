@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="css/rpi.css"> 
    <script>
        function do_onload(){
-          let myVar = setTimeout( function () { let timer = window.location.reload(true); }, 1000);
+          let myVar = setTimeout( function () { let timer = window.location.reload(true); }, 3000);
        }
    </script>    
 </head>
