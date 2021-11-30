@@ -119,7 +119,7 @@ function view($view,$data=NULL,$to_str=false){
 }
 
 $db = new Datatable();
-$onload="";
+$do_reload = false;
 
 if( isset($_GET['get']) and $_GET['get']!='' ){
    switch ( $_GET['get'] ){
@@ -130,7 +130,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'getall':
          $r = $db->getall();
          $buf = view('rpi_list', array( 'rpi_list'=>$r ), true );
-         $onload="onload='setInterval( function(){windows.location.assign(\"http://rpi.ontime24.pl/?get=getall\");}, 3000);";
+         $do_reload = true;
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
@@ -233,4 +233,4 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
 
    }
 }
-view('main', array('content'=>$buf, 'onload'=>$onload ) );
+view('main', array('content'=>$buf, 'reload'=>$do_reload ) );
