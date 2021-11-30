@@ -198,10 +198,10 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          exit;
          break;      
       case 'theme':   // set 'theme' cmd
-         error_log( "TEST: theme\n", 3, "/srv/www/rpi/error.log" );
          if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 and $_GET['face']!='' ){
             $cmd=base64_encode( json_encode( array( 'name'=>'theme', 'value'=>$_GET['face'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+            error_log( "TEST: theme: $cmd\n", 3, "/srv/www/rpi/error.log" );
          }
          header("Location: /?get=getall");
          exit;
