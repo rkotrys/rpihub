@@ -8,7 +8,11 @@
         </header>
         <ol>
         <?php foreach( $faces as $face ) { ?>    
-            <li><a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+            <?php if( $face==$rpi['face'] ){ ?>
+                <li><a href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+            <?php } else { ?>
+                <li><a style="background-color: <?=$face?>;" href='?get=theme&face=<?=$face?>&sn=<?=$rpi['sn']?>' ><?=$face?></a></li>
+            <?php } ?>    
         <?php } ?>    
         </ol>
     </article>
