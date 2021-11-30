@@ -44,12 +44,12 @@ public function getall(){
 }
 
 public function get($sn){
-   $query="select * from rpi where sn='$sn'";
-   error_log( "TEST: query get(): sn=$sn $query\n", 3, "/srv/www/rpi/error.log" );
+   $query="select * from rpi where sn='$sn';";
+   error_log( "TEST: get() query: $query\n", 3, "/srv/www/rpi/error.log" );
    try{ $r = $this->db->query($query); }
    catch(PDOException $e){ error_log( $e->getMessage().": ".$e->getCode()."\nQuery: $query", 3, "/srv/www/rpi/error.log" ); exit; }
    $data = $r->fetch(\PDO::FETCH_ASSOC);
-   error_log( "TEST: responce get(): ".print_r($data)."\n", 3, "/srv/www/rpi/error.log" );
+   error_log( "TEST: get() fetch:".print_r($data, true)."\n", 3, "/srv/www/rpi/error.log" );
    return $data[0];   
 }
 
@@ -114,7 +114,7 @@ function rpi_show($rpi){
    $buf.="<div class='rpi-header'>".$rpi['model']."</div>\n";
    foreach( $rpi as $k=>$v){
       if( $k=='model') continue;
-       $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>'$v'</div>\n</div>\n";
+       $buf.="<div class='flex-container  rpi-$k'>\n<div class='rpikey'>$k :</div>\n<div class='rpivalue'>$v</div>\n</div>\n";
    }
    $buf.="<div class='rpi-status' >".(($online=='rpi-online')?"ON-Line":"OFF-Line: ".totimedistance($tdiff)."\n<br><a href='http://rpi.ontime24.pl/?get=delete&sn=".$rpi["sn"]." '>remove</a>")."</div>\n";
    $buf.="<div class='rpi-status' ><a href='?cmd=edit&sn=".$rpi['sn']."'>Configure</a></div>\n";
