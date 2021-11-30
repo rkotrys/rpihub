@@ -202,7 +202,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          if( is_array($rpi) and count($rpi)>0 and $_GET['face']!='' ){
             $cmd=base64_encode( json_encode( array( 'name'=>'theme', 'value'=>$_GET['face'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
-            error_log( "TEST: theme: $cmd\n", 3, "/srv/www/rpi/error.log" );
+            //error_log( "TEST: theme: $cmd\n", 3, "/srv/www/rpi/error.log" );
          }
          header("Location: /?get=getall");
          exit;
@@ -221,7 +221,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          if( is_array($rpi) and count($rpi)>0 ){
             $buf="<h2>RPi SN: ".$rpi['sn']."</h2>\n";
             $buf="<ol>\n";
-            foreach( array('blue','gold','red','green','purple','silver') as $face ){
+            foreach( array('blue','gold','red','green','purple','black') as $face ){
                $buf.="<ul><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></ul>\n";
             }
             $buf.="</ol>\n";
