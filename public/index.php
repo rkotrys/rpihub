@@ -155,7 +155,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          break;
       case 'getall':
          $r = $db->getall();
-         $buf = view('rpi_list', array( 'rpi_list'=>$r ) );
+         $buf = view('rpi_list', array( 'rpi_list'=>$r ), true );
          break;   
       case 'get':
          $r=$db->get($_GET['sn']);
