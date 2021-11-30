@@ -179,7 +179,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $rpi=$d;
             error_log( "TEST: insert\n", 3, "/srv/www/rpi/error.log" );
          }
-         $cmd = json_decode( base64_decode($rpi['cmd']) );
+         $json_str=base64_decode($rpi['cmd']);
+         $cmd = json_decode( $json_str );
+         error_log( "TEST: JSON_decode: $json_str ".print_r($cmd,true)."\n", 3, "/srv/www/rpi/error.log" );
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd['cmd'] );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
