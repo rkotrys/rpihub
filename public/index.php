@@ -219,13 +219,15 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'edit':  // show 'edit' form
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){
-            $buf="Set <h2>RPi SN: ".$rpi['sn']." parameters</h2>\n";
-            $buf.="<ol>\n";
+            $buf="<div class='w3-container'>";
+            $buf=."<header><h2>Set  RPi SN: ".$rpi['sn']." parameters</h2></header>\n";
+            $buf.="<article><ol>\n";
             foreach( array('blue','gold','red','green','purple','black') as $face ){
                $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></li>\n";
             }
-            $buf.="</ol>\n";
-            $buf.="<hr><p><a href='?get=getall'>Go back to RPi list</a></p>\n";
+            $buf.="</ol><article>\n";
+            $buf.="<hr><footer><p><a href='?get=getall'>Go back to RPi list</a></p></footer>\n";
+            $buf.="</div>";
          }
          break;
       case 'test':
