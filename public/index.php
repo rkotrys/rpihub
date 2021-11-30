@@ -222,10 +222,10 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $buf="<h2>RPi SN: ".$rpi['sn']."</h2>\n";
             $buf="<ol>\n";
             foreach( array('blue','gold','red','green','purple','black') as $face ){
-               $buf.="<ul><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></ul>\n";
+               $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></li>\n";
             }
             $buf.="</ol>\n";
-            $buf.="<p><a href='?get=getall'>Go back to RPi list</a></p>\n";
+            $buf.="<hr><p><a href='?get=getall'>Go back to RPi list</a></p>\n";
          }
          break;
       case 'test':
