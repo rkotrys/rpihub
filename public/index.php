@@ -180,14 +180,14 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             //error_log( "TEST: insert\n", 3, "/srv/www/rpi/error.log" );
          }
          $cmd=json_decode(base64_decode($rpi['cmd']),true);
-         error_log( "TEST: cmd: ".print_r($cmd,true)." \n", 3, "/srv/www/rpi/error.log" );
+         //error_log( "TEST: cmd: ".print_r($cmd,true)." \n", 3, "/srv/www/rpi/error.log" );
          $x = array( 'status'=>'OK', 'time'=>date("Y-m-d H:i:s"), 'cmd'=>$cmd );
          $buf = base64_encode(json_encode( $x ));
          echo $buf;
          if( $cmd['name']!='none' ){
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>base64_encode(json_encode( array( 'name'=>'none' ) ) ) ) );
          }
-         
+
          exit;
          break; 
       case 'delete':
