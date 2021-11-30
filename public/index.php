@@ -198,7 +198,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          exit;
          break;      
       case 'theme':   // set 'theme' cmd
-         if( is_array($rpi=$db->get($_GET['sn'])) and count($rpi)>0 and $_GET['face']!='' ){
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 and $_GET['face']!='' ){
             $cmd=base64_encode( json_encode( array( 'name'=>'theme', 'value'=>$_GET['face'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
             error_log( "TEST: theme: $cmd\n", 3, "/srv/www/rpi/error.log" );
@@ -221,7 +222,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $buf="<h2>RPi SN: ".$rpi['sn']."</h2>\n";
             $buf="<ol>\n";
             foreach( array('blue','gold','red','green','purple','silver') as $face ){
-               $buf.="<ul><a href='?get=theme&face=$face' >$face</a></ul>\n";
+               $buf.="<ul><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></ul>\n";
             }
             $buf.="</ol>\n";
             $buf.="<p><a href='?get=getall'>Go back to RPi list</a></p>\n";
