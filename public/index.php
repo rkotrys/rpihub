@@ -219,8 +219,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'edit':  // show 'edit' form
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){
-            $buf="<h2>RPi SN: ".$rpi['sn']."</h2>\n";
-            $buf="<ol>\n";
+            $buf="Set <h2>RPi SN: ".$rpi['sn']." parameters</h2>\n";
+            $buf.="<ol>\n";
             foreach( array('blue','gold','red','green','purple','black') as $face ){
                $buf.="<li><a href='?get=theme&face=$face&sn=".$rpi[sn]."' >$face</a></li>\n";
             }
