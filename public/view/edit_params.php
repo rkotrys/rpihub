@@ -1,7 +1,7 @@
 <div class='w3-container'>
     <header>
         <h2>Set parameters of RPi SN: <?=$rpi['sn']?></h2>
-        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <??=$rpi['model']?></h4>
+        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?></h4>
     </header>
     <article>
         <header>
@@ -47,7 +47,6 @@
             <?php } ?>
         </ol>
     <article>
-    <p><?php foreach( $rpi as $k=>$v) print("$k:$v, "); ?></p>
     <footer>
         <p><a href='?get=getall'>Go back to RPi list</a></p>
     </footer>
