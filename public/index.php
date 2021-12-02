@@ -237,7 +237,30 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
          }
       header("Location: /?get=getall");         
+      exit;
+      break;
 
+      case 'poweroff':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'poweroff', 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");         
+      exit;
+      break;
+
+      case 'reboot':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'reboot', 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");         
+      exit;
+      break;
+
+      
       default:
          $buf="<h1>RPI: bad token</h1>";
    }   
