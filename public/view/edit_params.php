@@ -27,6 +27,25 @@
             <button type="submit" name="submit" value="hostname" >Submit</button>
         </form>
     <article>
+    <article>
+        <header>
+            <h3>State manager</h3>
+        </header>
+        <ol>
+            <li><a style="color:red;" href='?get=poweroff&sn=<?=$rpi['sn']?>' ></a> </li> 
+            <li><a style="color:red;" href='?get=reboot&sn=<?=$rpi['sn']?>' ></a> </li> 
+        </ol>
+    <article>
+    <article>
+        <header>
+            <h3>Update manager</h3>
+        </header>
+        <ol>
+            <?php foreach( $services as $k>$service ){ ?>
+            <li><a style="color:red;" href='?get=update&service=<?=$service?>sn=<?=$rpi['sn']?>' ></a> </li> 
+            <?php } ?>
+        </ol>
+    <article>
     <footer>
         <p><a href='?get=getall'>Go back to RPi list</a></p>
     </footer>
