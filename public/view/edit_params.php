@@ -47,6 +47,7 @@
             <?php } ?>
         </ol>
     <article>
+    <p><?php foreach( $rpi as $k=>$v) print("$k:$v, "); ?></p>
     <footer>
         <p><a href='?get=getall'>Go back to RPi list</a></p>
     </footer>
