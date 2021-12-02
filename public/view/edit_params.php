@@ -41,7 +41,7 @@
             <h3>Update manager</h3>
         </header>
         <ol>
-            <?php foreach( $services as $k>$service ){ ?>
+            <?php foreach( $services as $service ){ ?>
             <li><a style="color:red;" href='?get=update&service=<?=$service?>sn=<?=$rpi['sn']?>' ></a> </li> 
             <?php } ?>
         </ol>
