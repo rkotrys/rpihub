@@ -1,7 +1,7 @@
 <div class='w3-container'>
     <header>
         <h2>Set parameters of RPi SN: <?=$rpi['sn']?></h2>
-        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>,Model: <??=$rpi['model']?></h4>
+        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <??=$rpi['model']?></h4>
     </header>
     <article>
         <header>
