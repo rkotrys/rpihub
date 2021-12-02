@@ -43,7 +43,7 @@
         </header>
         <ol>
             <?php foreach( $services as $service ){ ?>
-            <li><a style="color:red;" href='?get=update&service=<?=$service?>sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a> </li> 
+            <li><a style="color:red;" href='?get=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a> </li> 
             <?php } ?>
         </ol>
     <article>
