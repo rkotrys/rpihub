@@ -223,6 +223,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          }   
          header("Content-Type: application/json; charset=UTF-8");
          echo ( json_encode( $r ) );
+         exit;
          break;
    
       case 'test':
