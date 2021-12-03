@@ -8,6 +8,6 @@ $(document).ready(function(){
         });
     }
 
-    setInterval( update_online, 1000 );
+    setInterval( update_online, 3000 );
   
 }); 
