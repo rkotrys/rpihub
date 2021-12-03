@@ -5,7 +5,7 @@ $(document).ready(function(){
             $(".rpi-online").removeClass("rpi-online");
             $(".rpi-offline").removeClass("rpi-offline");
             $.each(result, function( i, rpi ){ 
-                  $("[.sn="+rpi.online+"]").addClass("rpi-"+rpi.online);
+                  $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
                 });               
         });
     }
