@@ -92,8 +92,8 @@ public function del($sn){
    return $r;
 }
 
+}  #enf of 'Datatable' class
 
-}
 
 function totimedistance($sec){
    $buf='';
