@@ -17,13 +17,6 @@
 <?php  } ?>
     <div class='rpi-status' >
     <?php if($online){ ?>
-        ON-Line
-    <?php }else { ?>    
-        OFF-Line: <?=totimedistance($tdiff)?>
-    <?php } ?>    
-    </div>     
-    <div class='rpi-status' >
-    <?php if($online){ ?>
         <a href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
     <?php }else{ ?>
         <a href='http://rpi.ontime24.pl/?get=delete&sn=<?=$rpi["sn"]?>' >remove</a>
