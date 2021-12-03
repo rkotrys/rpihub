@@ -10,6 +10,6 @@ $(document).ready(function(){
         });
     }
 
-    setInterval( update_online, 3000 );
+    setInterval( update_online, 1000 );
   
 }); 
