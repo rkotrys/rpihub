@@ -220,8 +220,7 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
    switch ( $_GET['set'] ){
       case 'hostname':
          $rpi=$db->get($_GET['sn']);
-         //if( is_array($rpi) and (count($rpi)>1) and isset( $_GET['hostname']) and (count($_GET['hostname'])>2) ){
-         if( is_array($rpi) ){   
+         if( is_array($rpi) and count($rpi)>0 ){   
             $cmd=base64_encode( json_encode( array( 'name'=>'hostname', 'value'=>$_GET['hostname'], 'sn'=>$rpi['sn'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
          }
@@ -231,7 +230,6 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
 
       case 'update':
          $rpi=$db->get($_GET['sn']);
-         //if( is_array($rpi) and (count($rpi)>1) and isset( $_GET['hostname']) and (count($_GET['hostname'])>2) ){
          if( is_array($rpi) and count($rpi)>0 ){   
             $cmd=base64_encode( json_encode( array( 'name'=>'update', 'service'=>$_GET['service'], 'sn'=>$rpi['sn'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
