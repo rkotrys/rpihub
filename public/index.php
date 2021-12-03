@@ -213,7 +213,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $tdiff = time() - strtotime($rpi['last']) - date_offset_get(new DateTime);
             if( $tdiff < 4){
                $rpi['online']='online';
-               $rpi['last']='ON-Line'
+               $rpi['last']='ON-Line';
             }else{
                $rpi['online']='offline';
                $rpi['last']=totimedistance($tdiff);
