@@ -222,7 +222,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             $r[$sn]=$rpi;
          }   
          header("Content-Type: application/json; charset=UTF-8");
-         echo (json_encode( $r );
+         echo ( json_encode( $r ) );
          break;
    
       case 'test':
