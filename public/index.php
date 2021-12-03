@@ -206,6 +206,25 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             );
          }
          break;
+
+      case 'isonline':
+         $r = $db->getall();
+         foreach( $r as $sn=>$rpi ){
+            $tdiff = time() - strtotime($rpi['last']) - date_offset_get(new DateTime);
+            if( $tdiff < 4){
+               $rpi['online']='online';
+               $rpi['last']='ON-Line'
+            }else{
+               $rpi['online']='offline';
+               $rpi['last']=totimedistance($tdiff);
+            }
+            unset( $rpi['cmd'] );
+            $r[$sn]=$rpi;
+         }   
+         header("Content-Type: application/json; charset=UTF-8");
+         echo (json_encode( $r );
+         break;
+   
       case 'test':
          $buf="<p>Test</p>";
          break;
