@@ -14,6 +14,6 @@ $(document).ready(function(){
         });
     }
 
-    setInterval( update_online, 10000 );
+    setInterval( update_online, 1000 );
   
 }); 
