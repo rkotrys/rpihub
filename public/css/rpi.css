@@ -73,7 +73,7 @@ body {
 }
 #rpi-details > article > div > a{
    display: inline-block; 
-   width: 100%;
+   width: 70%;
    min-width: 70%;
    
 }
