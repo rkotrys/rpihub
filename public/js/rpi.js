@@ -5,7 +5,7 @@ $(document).ready(function(){
             $(".rpi-online").removeClass("rpi-online");
             $(".rpi-offline").removeClass("rpi-offline");
             let show_offline = ( $("#hide_offline[checked]").val() )?true:false;
-            console.log( "checked:", $("#hide_offline[checked]").val(), "\nshow_offline: "+show_offline );
+            console.log( "checked:", $('#hide_offline[checked]').val(), "\nshow_offline: "+show_offline );
             $.each(result, function( i, rpi ){ 
                   $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
                   //if( show_offline )  
