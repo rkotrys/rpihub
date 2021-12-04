@@ -32,10 +32,7 @@
     </div>
 <?php  } ?>
     <div class='flex-container rpi-status' >
-    <?php if($online){ ?>
-        <a class="w3-button w3-blue w3-round w3-small" href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
-    <?php }else{ ?>
-        <a class="w3-btn w3-red w3-round w3-small" href='http://rpi.ontime24.pl/?get=delete&sn=<?=$rpi["sn"]?>' >remove</a>
-    <?php } ?>   
+        <a status="conf_<?=$rpi['sn']?>" class="details_status w3-button w3-blue w3-round w3-small" href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
+        <a status="remove_<?=$rpi['sn']?>" class="details_status w3-btn w3-red w3-round w3-small" href='http://rpi.ontime24.pl/?get=delete&sn=<?=$rpi["sn"]?>' >remove</a>
     </div>
 </div>
