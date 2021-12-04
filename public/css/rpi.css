@@ -68,6 +68,9 @@ body {
    text-align: center;
    background-color:aquamarine;
 }
+#rpi-details > article > .w3-cell {
+    width: 100%;
+}
 #rpi-details > article > .w3-cell > a{
    display: inline-block; 
    width: 100%;
