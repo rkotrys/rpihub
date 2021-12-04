@@ -68,10 +68,11 @@ body {
    text-align: center;
    background-color:aquamarine;
 }
-#rpi-details > article > .w3-cell {
+#rpi-details > article > div {
     width: 100%;
 }
-#rpi-details > article > div > a{
+#rpi-details > article > div > a,
+#rpi-details > article > div > form {
    display: inline-block; 
    width: 70%;
    min-width: 70%;
