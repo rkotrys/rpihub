@@ -1,7 +1,7 @@
 <div class='w3-container'>
     <header class="w3-display-container">
         <h2 class="w3-left">List of RPi devices</h2>
-        <div class="w3-right" ><input type="checkbox" id="hide_offline" name="hide_offline" value="hide_offline"></div>
+        <div class="w3-right" ><input type="checkbox" id="hide_offline" name="hide_offline" value="hide_offline">show all</div>
     </header>
     <div class='rpi-list'>
     <?php 
