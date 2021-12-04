@@ -26,7 +26,7 @@ $(document).ready(function(){
     }
     
     $(".rpi").hide();
-    $(".details_status").hide()
+    //$(".details_status").hide()
     
     setInterval( update_online, 1000 );
     update_online();
