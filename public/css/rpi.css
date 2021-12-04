@@ -74,7 +74,8 @@ body {
 #rpi-details > article > div > a,
 #rpi-details > article > div > form {
    display: inline-block; 
-   width: 70%;
-   min-width: 70%;
+   width: 80%;
+   min-width: 80%;
+   text-align:center;
    
 }
