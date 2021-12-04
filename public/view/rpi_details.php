@@ -6,7 +6,6 @@
        $online=false; 
     }
 ?>
-<!--  <?=($online)?'rpi-online':'rpi-offline';?> -->
 <div class='w3-card rpi ' sn='<?=$rpi["sn"]?>' >
 <div class='rpi-header'><?=$rpi['model']?></div>
 <?php foreach( $rpi as $k=>$v) { if( $k=='model') continue; ?>
