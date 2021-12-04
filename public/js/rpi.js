@@ -7,7 +7,7 @@ $(document).ready(function(){
             let show_offline = ( $("#hide_offline").prop("checked") )?true:false;
             $.each(result, function( i, rpi ){ 
                   $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
-                  if( show_offline )  
+                  if( show_offline | rpi.online=='online' )  
                     $("[sn="+rpi.sn+"]").show();
                   else 
                     $(".rpi-offline[sn="+rpi.sn+"]").hide();
