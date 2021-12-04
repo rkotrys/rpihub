@@ -4,7 +4,7 @@
         <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?></h4>
     </header>
     <section  class="flex-container" id="rpi-details" >
-    <article>
+    <article class="w3-card">
         <header>
             <h3>Color of the clock face</h3>
         </header>
@@ -18,7 +18,7 @@
         <?php } ?>    
         </ol>
     </article>
-    <article>
+    <article  class="w3-card">
         <header>
             <h3>Set new hostname</h3>
         </header>
@@ -28,8 +28,8 @@
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button type="submit" name="submit" value="hostname" >Submit</button>
         </form>
-    <article>
-    <article>
+            </article>
+    <article  class="w3-card">
         <header>
             <h3>State manager</h3>
         </header>
@@ -37,8 +37,8 @@
             <li><a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=poweroff&sn=<?=$rpi['sn']?>' >Power OFF</a> </li> 
             <li><a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=reboot&sn=<?=$rpi['sn']?>' >Reboot</a> </li> 
         </ol>
-    <article>
-    <article>
+            </article>
+    <article  class="w3-card">
         <header>
             <h3>Update manager</h3>
         </header>
@@ -47,8 +47,8 @@
             <li><a class="w3-button w3-green w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a> </li> 
             <?php } ?>
         </ol>
-    <article>
-            </section>    
+    </article>
+    </section>    
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
