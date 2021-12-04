@@ -5,13 +5,13 @@ $(document).ready(function(){
             $(".rpi-online").removeClass("rpi-online");
             $(".rpi-offline").removeClass("rpi-offline");
             let show_offline = ($("#hide_offline:checked").lenght>0)?true:false;
-            console.log( "show_offline: "+show_offline );
+            console.log( "checked:" $("#hide_offline:checked").lenght, "\nshow_offline: "+show_offline );
             $.each(result, function( i, rpi ){ 
                   $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
-                  if( show_offline )  
-                    $("[sn="+rpi.sn+"]").show();
-                  else 
-                    $(".rpi-offline[sn="+rpi.sn+"]").hide();
+                  //if( show_offline )  
+                  //  $("[sn="+rpi.sn+"]").show();
+                  //else 
+                  //  $(".rpi-offline[sn="+rpi.sn+"]").hide();
                   $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
                   $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                   $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
