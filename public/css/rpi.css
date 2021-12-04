@@ -72,7 +72,7 @@ body {
     width: 100%;
 }
 #rpi-details > article > div > a,
-#rpi-details > article > div > form {
+#rpi-details > article > form {
    display: inline-block; 
    width: 80%;
    min-width: 80%;
