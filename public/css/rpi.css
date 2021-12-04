@@ -58,3 +58,6 @@ body {
 .rpi > .rpi-sn {
     font-weight: bold;
 }
+#rpi-details > article {
+    width: 200px;;
+}

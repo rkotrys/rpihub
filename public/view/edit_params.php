@@ -3,7 +3,7 @@
         <h2>Set parameters of RPi SN: <?=$rpi['sn']?></h2>
         <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?></h4>
     </header>
-    <section  class="flex-container" >
+    <section  class="flex-container" id="rpi-details" >
     <article>
         <header>
             <h3>Color of the clock face</h3>
