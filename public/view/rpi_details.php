@@ -25,13 +25,14 @@
         <div class='rpikey'>wlan0 ip :</div>
         <div class='rpivalue'><?=$rpi['wip']?></div>
 </div>
-
+<div id="all<?=rpi['sn']?>">
 <?php foreach( $rpi as $k=>$v) { if( $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' or $k=='cmd' ) continue; ?>
     <div class='flex-container  rpi-<?=$k?>'>
         <div class='rpikey'><?=$k?> :</div>
         <div class='rpivalue'><?=$v?></div>
     </div>
 <?php  } ?>
+</div>
     <div class='rpi-status' >
     <?php if($online){ ?>
         <a href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
