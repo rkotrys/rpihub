@@ -70,7 +70,7 @@ body {
 }
 #rpi-details > article > .w3-cell > a{
    display: inline-block; 
-   width: 70%;
+   width: 100%;
    min-width: 70%;
    
 }
