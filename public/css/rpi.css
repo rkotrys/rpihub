@@ -64,9 +64,6 @@ body {
     padding: 6px;
     text-align:center;
 }
-#rpi-details > article {
-   text-align:center;    
-}
 #rpi-details > article > header {
    width: 100%;
    text-align: center;
