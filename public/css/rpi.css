@@ -70,7 +70,7 @@ body {
    background-color:aquamarine;
 }
 #rpi-details > article > ol {
-    width: 100%;
+    width: 80%;
     text-align:left;
 }
 #rpi-details > article > div {
