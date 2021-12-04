@@ -7,9 +7,9 @@ $(document).ready(function(){
             $.each(result, function( i, rpi ){ 
                   $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
                   if( show_offline | rpi.online=='online' )  
-                    $("[sn="+rpi.sn+"]").show();
+                    $(".rpi[sn="+rpi.sn+"]").show();
                   else 
-                    $("[sn="+rpi.sn+"]").hide();
+                    $(".rpi[sn="+rpi.sn+"]").hide();
                   /*
                     if( rpi.online=='online' ){
                     $("#conf_"+rpi.sn).show();
