@@ -62,11 +62,16 @@ body {
     width: 300px;
     margin: 6px;
     padding: 6px;
+    text-align:center;
 }
 #rpi-details > article > header {
    width: 100%;
    text-align: center;
    background-color:aquamarine;
+}
+#rpi-details > article > ol {
+    width: 100%;
+    text-align:left;
 }
 #rpi-details > article > div {
     width: 100%;
