@@ -68,3 +68,7 @@ body {
    text-align: center;
    background-color:aquamarine;
 }
+#rpi-details > article > a{
+   width: 70%;
+   
+}
