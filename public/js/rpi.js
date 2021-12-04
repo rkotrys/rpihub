@@ -24,9 +24,10 @@ $(document).ready(function(){
                 });               
         });
     }
-
+    
     $(".rpi").hide();
     $(".details_status").hide()
+    update_online();
     setInterval( update_online, 1000 );
   
 }); 
