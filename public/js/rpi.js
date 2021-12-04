@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    $(".rpi").hide();
     function update_online(){
         $.getJSON("http://rpi.ontime24.pl/?get=isonline", function(result){
             $(".rpi-online").removeClass("rpi-online");
