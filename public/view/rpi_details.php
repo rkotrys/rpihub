@@ -33,9 +33,9 @@
 <?php  } ?>
     <div class='rpi-status' >
     <?php if($online){ ?>
-        <a href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
+        <a class="w3-btn w3-blue w3-round" href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
     <?php }else{ ?>
-        <a href='http://rpi.ontime24.pl/?get=delete&sn=<?=$rpi["sn"]?>' >remove</a>
+        <a class="w3-btn w3-red w3-round" href='http://rpi.ontime24.pl/?get=delete&sn=<?=$rpi["sn"]?>' >remove</a>
     <?php } ?>   
     </div>
 </div>
