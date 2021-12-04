@@ -9,7 +9,7 @@ $(document).ready(function(){
                   if( show_offline | rpi.online=='online' )  
                     $("[sn="+rpi.sn+"]").show();
                   else 
-                    $(".[sn="+rpi.sn+"]").hide();
+                    $("[sn="+rpi.sn+"]").hide();
                   /*
                     if( rpi.online=='online' ){
                     $("#conf_"+rpi.sn).show();
