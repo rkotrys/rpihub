@@ -13,7 +13,7 @@
    //    }
    </script>    
 </head>
-<body <?php if($do_reload) print( 'onload="do_onload()"' ); ?> >
+<body>
    <header class="w3-container w3-teal">
    <h1>RPI-hub</h1>
    </header>      
