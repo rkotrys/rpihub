@@ -69,6 +69,8 @@ body {
    background-color:aquamarine;
 }
 #rpi-details > article > a{
+   display: inline-block; 
    width: 70%;
+   min-width: 70%;
    
 }
