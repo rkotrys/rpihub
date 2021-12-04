@@ -48,6 +48,6 @@
         </ol>
     <article>
     <footer>
-        <p><a href='?get=getall'>Go back to RPi list</a></p>
+        <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
 </div>
