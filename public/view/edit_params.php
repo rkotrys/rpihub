@@ -33,7 +33,7 @@
         <header>
             <h3>State manager</h3>
         </header>
-        <div class="w3-container w3-cell w3-cell-middle" >
+        <div class="w3-container w3-cell w3-cell-middle w3-center" >
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=poweroff&sn=<?=$rpi['sn']?>' >Power OFF</a>
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=reboot&sn=<?=$rpi['sn']?>' >Reboot</a>
             </div>
@@ -42,7 +42,7 @@
         <header>
             <h3>Update manager</h3>
         </header>
-        <div class="w3-container w3-green w3-cell w3-cell-middle" >
+        <div class="w3-container w3-cell w3-cell-middle w3-center" >
             <?php foreach( $services as $service ){ ?>
             <a class="w3-button w3-green w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a>
             <?php } ?>
