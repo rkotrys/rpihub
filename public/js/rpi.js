@@ -10,13 +10,15 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"]").show();
                   else 
                     $(".rpi-offline[sn="+rpi.sn+"]").hide();
-                  if( rpi.online=='online' ){
+                  /*
+                    if( rpi.online=='online' ){
                     $("#conf_"+rpi.sn).show();
                     $("#remove_"+rpi.sn).hide();
                   }else{
                     $("#conf_"+rpi.sn).hide();
                     $("#remove_"+rpi.sn).show();
                   }
+                  */
                   $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
                   $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                   $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
