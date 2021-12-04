@@ -3,6 +3,7 @@
         <h2>Set parameters of RPi SN: <?=$rpi['sn']?></h2>
         <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?></h4>
     </header>
+    <section  class="flex-container" >
     <article>
         <header>
             <h3>Color of the clock face</h3>
@@ -47,6 +48,7 @@
             <?php } ?>
         </ol>
     <article>
+            </section>    
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
