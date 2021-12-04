@@ -33,8 +33,8 @@
             <h3>State manager</h3>
         </header>
         <ol>
-            <li><a style="color:red;" href='?set=poweroff&sn=<?=$rpi['sn']?>' >Power OFF</a> </li> 
-            <li><a style="color:red;" href='?set=reboot&sn=<?=$rpi['sn']?>' >Reboot</a> </li> 
+            <li><a class="w3-button w3-red w3-round w3-small" style="color:red;" href='?set=poweroff&sn=<?=$rpi['sn']?>' >Power OFF</a> </li> 
+            <li><a class="w3-button w3-red w3-round w3-small" style="color:red;" href='?set=reboot&sn=<?=$rpi['sn']?>' >Reboot</a> </li> 
         </ol>
     <article>
     <article>
@@ -43,7 +43,7 @@
         </header>
         <ol>
             <?php foreach( $services as $service ){ ?>
-            <li><a style="color:red;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a> </li> 
+            <li><a class="w3-button w3-green w3-round w3-small" style="color:red;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a> </li> 
             <?php } ?>
         </ol>
     <article>
