@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $(".rpi").hide();
     function update_online(){
         $.getJSON("http://rpi.ontime24.pl/?get=isonline", function(result){
             $(".rpi-online").removeClass("rpi-online");
@@ -19,6 +18,7 @@ $(document).ready(function(){
         });
     }
 
+    $(".rpi").hide();
     setInterval( update_online, 1000 );
   
 }); 
