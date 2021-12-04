@@ -7,6 +7,7 @@
     }
 ?>
 <div class='w3-card rpi ' sn='<?=$rpi["sn"]?>' >
+
 <div class='rpi-header'><?=$rpi['model']?></div>
 <div class='flex-container  rpi-sn'>
         <div class='rpikey'>sn :</div>
@@ -17,15 +18,15 @@
         <div class='rpivalue'><?=$rpi['hostname']?></div>
 </div>
 <div class='flex-container  rpi-ip'>
-        <div class='rpikey'>sn :</div>
+        <div class='rpikey'>eth0 ip :</div>
         <div class='rpivalue'><?=$rpi['ip']?></div>
 </div>
 <div class='flex-container  rpi-wip'>
-        <div class='rpikey'>sn :</div>
+        <div class='rpikey'>wlan0 ip :</div>
         <div class='rpivalue'><?=$rpi['wip']?></div>
 </div>
 
-<?php foreach( $rpi as $k=>$v) { if( $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' ) continue; ?>
+<?php foreach( $rpi as $k=>$v) { if( $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' or $k=='cmd' ) continue; ?>
     <div class='flex-container  rpi-<?=$k?>'>
         <div class='rpikey'><?=$k?> :</div>
         <div class='rpivalue'><?=$v?></div>
