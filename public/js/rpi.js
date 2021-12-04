@@ -29,5 +29,5 @@ $(document).ready(function(){
     //$(".details_status").hide()
     
     setInterval( update_online, 1000 );
-    update_online();
+    //update_online();
 }); 
