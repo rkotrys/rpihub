@@ -38,12 +38,11 @@ body {
     text-align:center;
 }
 .rpi div.rpi-status {
-    padding: 10px 0;
+    padding: 10px 0 0 0;
     width: 100%;
     border: none;
     display:block;
     text-align:center;
-    background-color: #ccc;
 }
 .rpi  div.rpikey {
     padding: 0 10px 0 10px;
