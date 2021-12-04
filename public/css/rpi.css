@@ -71,7 +71,7 @@ body {
 #rpi-details > article > .w3-cell {
     width: 100%;
 }
-#rpi-details > article > .w3-cell > a{
+#rpi-details > article > div > a{
    display: inline-block; 
    width: 100%;
    min-width: 70%;
