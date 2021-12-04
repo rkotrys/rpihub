@@ -31,7 +31,7 @@
         <div class='rpivalue'><?=$v?></div>
     </div>
 <?php  } ?>
-    <div class='rpi-status' >
+    <div class='flex-container rpi-status' >
     <?php if($online){ ?>
         <a class="w3-btn w3-blue w3-round w3-tiny" href='?get=edit&sn=<?=$rpi['sn']?>'>configure</a>
     <?php }else{ ?>
