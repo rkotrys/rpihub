@@ -6,19 +6,20 @@ $(document).ready(function(){
             let show_offline = ( $("#hide_offline").prop("checked") )?true:false;
             $.each(result, function( i, rpi ){ 
                   $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
+
                   if( show_offline | rpi.online=='online' )  
                     $(".rpi[sn="+rpi.sn+"]").show();
                   else 
                     $(".rpi[sn="+rpi.sn+"]").hide();
-                  /*
-                    if( rpi.online=='online' ){
-                    $("#conf_"+rpi.sn).show();
-                    $("#remove_"+rpi.sn).hide();
+                  
+                  if( rpi.online=='online' ){
+                    $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).show();
+                    $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
                   }else{
-                    $("#conf_"+rpi.sn).hide();
-                    $("#remove_"+rpi.sn).show();
+                    $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
+                    $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).show();
                   }
-                  */
+                  
                   $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
                   $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                   $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
