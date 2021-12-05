@@ -17,7 +17,7 @@ $(document).ready(function(){
                     $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
                   }else{
                     $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
-                    $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).show();
+                    $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
                   }
                   
                   $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
