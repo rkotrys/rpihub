@@ -12,13 +12,13 @@ $(document).ready(function(){
                   else 
                     $(".rpi[sn="+rpi.sn+"]").hide();
                   
-                  if( rpi.online=='online' ){
+                  if( rpi.online=='online'){
                     $(".rpi[sn='"+rpi.sn+"'] a[status='configure']" ).show();
                     $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
                   }else{
                     $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
-                    $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
                   }
+
                   
                   $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
                   $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
