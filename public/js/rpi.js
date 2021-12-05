@@ -7,17 +7,16 @@ $(document).ready(function(){
             $.each(result, function( i, rpi ){ 
                   $("[sn="+rpi.sn+"]").addClass("rpi-"+rpi.online);
 
+                  if( rpi.online=='online'){
+                    $(".rpi[sn='"+rpi.sn+"'] a[status='configure']" ).show();
+                  }else{
+                    $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
+                  }
+
                   if( show_offline | rpi.online=='online' )  
                     $(".rpi[sn="+rpi.sn+"]").show();
                   else 
                     $(".rpi[sn="+rpi.sn+"]").hide();
-                  
-                  if( rpi.online=='online'){
-                    $(".rpi[sn='"+rpi.sn+"'] a[status='configure']" ).show();
-                    $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
-                  }else{
-                    $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
-                  }
 
                   
                   $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
