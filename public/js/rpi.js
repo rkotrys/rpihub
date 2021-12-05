@@ -10,7 +10,7 @@ $(document).ready(function(){
                   if( rpi.online=='online'){
                     $(".rpi[sn='"+rpi.sn+"'] a[status='configure']" ).show();
                   }else{
-                    $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
+                    $(".rpi[sn='"+rpi.sn+"'] a[status='configure']" ).hide();
                   }
 
                   if( show_offline | rpi.online=='online' )  
