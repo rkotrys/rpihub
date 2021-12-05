@@ -13,7 +13,7 @@ $(document).ready(function(){
                     $(".rpi[sn="+rpi.sn+"]").hide();
                   
                   if( rpi.online=='online' ){
-                    $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).show();
+                    $(".rpi[sn='"+rpi.sn+"'] a[status='configure']" ).show();
                     $(".rpi[sn='"+rpi.sn+"'] a[status='remove']" ).hide();
                   }else{
                     $(".rpi[sn='"+rpi.sn+"'] a[starus='configure']" ).hide();
