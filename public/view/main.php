@@ -7,11 +7,6 @@
    <script src="js/jquery-3.6.0.min.js"></script>
    <link rel="stylesheet" href="css/rpi.css"> 
    <script src="js/rpi.js"></script>
-   <script>
-   //    function do_onload(){
-   //       let myVar = setTimeout( function () { let timer = window.location.reload(true); }, 5000);
-   //    }
-   </script>    
 </head>
 <body>
    <header class="w3-container w3-teal">
