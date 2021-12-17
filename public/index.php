@@ -138,8 +138,9 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          $buf = view( 'rpi_details', array('rpi'=>$r), true );
          break;
       case 'post':         
-         //error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
+         error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
          $df=json_decode(file_get_contents('php://input'), true);
+         error_log( "TEST: post json:\n".print_r($df,True), 3, "/srv/www/rpi/error.log" );
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
          $df['model']=str_replace("Raspberry Pi","RPi",$df['model']);
          $d=array( 'sn'=>$df['serial'],
