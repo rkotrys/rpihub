@@ -4,6 +4,11 @@
         <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?></h4>
     </header>
     <section  class="rpi-list" id="rpi-details" >
+    <?php
+        $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
+        $rpi['theme']=($ld['display']=='oled13')?'mono':$dl['localdata']['theme'];
+    ?>
+    <?php if( $rpi['theme']!='mono' ) { ?>    
     <article class="w3-card">
         <header>
             <h3>Color of the clock face</h3>
@@ -18,6 +23,7 @@
         <?php } ?>    
         </ol>
     </article>
+    <?php } //ecd of theme card ?>
     <article  class="w3-card">
         <header>
             <h3>Set new hostname</h3>
