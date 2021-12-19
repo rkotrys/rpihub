@@ -158,7 +158,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wmac'=>$df['wmac'],
                    'theme'=>$df['theme']
          );
-         error_log( "TEST: post rpi: ".print_r($rpi['theme'],true)." \n", 3, "/srv/www/rpi/error.log" );
+         error_log( "TEST: post rpi: ".$rpi['theme']." \n", 3, "/srv/www/rpi/error.log" );
          error_log( "TEST: post rpi: ".print_r(base64_decode($rpi['theme']),true)." \n", 3, "/srv/www/rpi/error.log" );
          $rpi = $db->get($d['sn']);
          //error_log( "TEST: post rpi: ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
