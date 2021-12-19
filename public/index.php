@@ -141,6 +141,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
          //error_log( "TEST: post start\n", 3, "/srv/www/rpi/error.log" );
          $df=json_decode(file_get_contents('php://input'), true);
          //error_log( "TEST: post json:\n".print_r($df,True), 3, "/srv/www/rpi/error.log" );
+         $localdata = json_decode( base64_decode($df['theme']) );
          foreach( $df as $k=>$v) $df[$k]=str_replace('"','',$v);
          $df['model']=str_replace("Raspberry Pi","RPi",$df['model']);
          $d=array( 'sn'=>$df['serial'],
@@ -158,8 +159,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'wmac'=>$df['wmac'],
                    'theme'=>$df['theme']
          );
-         error_log( "TEST: post rpi1: ".$df['theme']." \n", 3, "/srv/www/rpi/error.log" );
-         error_log( "TEST: post rpi2: ".print_r(base64_decode($df['theme']),true)." \n", 3, "/srv/www/rpi/error.log" );
+         //error_log( "TEST: post rpi1: ".$df['theme']." \n", 3, "/srv/www/rpi/error.log" );
+         //error_log( "TEST: post rpi2: ".print_r(base64_decode($df['theme']),true)." \n", 3, "/srv/www/rpi/error.log" );
          $rpi = $db->get($d['sn']);
          //error_log( "TEST: post rpi: ".print_r($rpi,true)." \n", 3, "/srv/www/rpi/error.log" );
          if( is_array($rpi) and count($rpi)>0 ){
