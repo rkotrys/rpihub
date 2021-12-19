@@ -5,7 +5,7 @@
     } else { 
        $online=false; 
     }
-    $ld =  json_decode( base64_decode( $rpi['theme'] ) );
+    $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
 ?>
 <div class='w3-card rpi ' sn='<?=$rpi["sn"]?>' >
 <div class='rpi-header'><?=$rpi['model']?></div>
