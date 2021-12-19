@@ -14,8 +14,8 @@
         <div class='rpivalue'><?=$rpi['sn']?></div>
 </div>
 <div class='flex-container'>
-        <div class=''>display :</div>
-        <div class='rpivalue'><?=print_r($ld,true)?></div>
+        <div class='rpikey'>display :</div>
+        <div class='rpivalue'><?=print_r($ld['display'],true)?></div>
 </div>
 <div class='flex-container  rpi-hostname'>
         <div class='rpikey'>hostname :</div>
