@@ -26,7 +26,7 @@ public function __construct(){
                                           memtotal varchar(20),
                                           `version` varchar(20),
                                           release varchar(20),
-                                          theme varchar(20),
+                                          theme text,
                                           cmd text,
                                           last datetime default CURRENT_TIMESTAMP  )";
   try{  $this->db->exec($query); }
