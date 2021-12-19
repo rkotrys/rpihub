@@ -5,7 +5,7 @@
     } else { 
        $online=false; 
     }
-    $ld = json_decode( base64_decode($rpi['theme']) );
+    //$ld = json_decode( base64_decode($rpi['theme']) );
 ?>
 <div class='w3-card rpi ' sn='<?=$rpi["sn"]?>' >
 <div class='rpi-header'><?=$rpi['model']?></div>
@@ -15,7 +15,7 @@
 </div>
 <div class='flex-container  rpi-display'>
         <div class='display'>display :</div>
-        <div class='rpivalue'><?=$ld['display']?></div>
+        <div class='rpivalue'><?=//$ld['display']?></div>
 </div>
 <div class='flex-container  rpi-hostname'>
         <div class='rpikey'>hostname :</div>
