@@ -1,13 +1,13 @@
+<?php
+        $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
+        $rpi['theme']=($ld['display']=='oled13')?'mono':$dl['localdata']['theme'];
+?>
 <div class='w3-container'>
     <header>
         <h2>Set parameters of RPi SN: <?=$rpi['sn']?></h2>
-        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?></h4>
+        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?> :<?=$rpi['theme']?></h4>
     </header>
     <section  class="rpi-list" id="rpi-details" >
-    <?php
-        $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
-        $rpi['theme']=($ld['display']=='oled13')?'mono':$dl['localdata']['theme'];
-    ?>
     <?php if( $rpi['theme']!='mono' ) { ?>    
     <article class="w3-card">
         <header>
