@@ -6,7 +6,7 @@
        $online=false; 
     }
     $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
-    $rpi['theme']=($dl['display']=='oled13')?'mono':$dl['localdata']['theme'];
+    $rpi['theme']=($ld['display']=='oled13')?'mono':$dl['localdata']['theme'];
 ?>
 <div class='w3-card rpi ' sn='<?=$rpi["sn"]?>' >
 <div class='rpi-header'><?=$rpi['model']?></div>
