@@ -156,7 +156,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
                    'memtotal'=>$df['memtotal'],
                    'model'=>$df['model'],
                    'wmac'=>$df['wmac'],
-                   'theme'=>base64_decode($df['theme'])
+                   'theme'=>$df['theme']
          );
 
          $rpi = $db->get($d['sn']);
