@@ -15,7 +15,7 @@
 </div>
 <div class='flex-container'>
         <div class=''>display :</div>
-        <div class='rpivalue'><?='display'?></div>
+        <div class='rpivalue'><?=$ld['display']?></div>
 </div>
 <div class='flex-container  rpi-hostname'>
         <div class='rpikey'>hostname :</div>
