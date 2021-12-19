@@ -5,7 +5,7 @@
 <div class='w3-container'>
     <header>
         <h2>Set parameters of RPi SN: <?=$rpi['sn']?></h2>
-        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?> :<?=$rpi['theme']?></h4>
+        <h4>HOST:  <?=$rpi['hostname']?>, PUUID: <?=$rpi['puuid']?>, Model: <?=$rpi['model']?>, display: <?=$ld['display']?></h4>
     </header>
     <section  class="rpi-list" id="rpi-details" >
     <?php if( $rpi['theme']!='mono' ) { ?>    
