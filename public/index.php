@@ -191,7 +191,7 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
       case 'theme':   // set 'theme' cmd
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 and $_GET['face']!='' ){
-            $cmd=base64_encode( json_encode( array( 'name'=>'theme', 'value'=>$_GET['face'] ) ) );
+            $cmd=base64_encode( json_encode( array( 'name'=>'theme', 'value'=>$_GET['face'], 'sn'=>$rpi['serial'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
             //error_log( "TEST: theme: $cmd\n", 3, "/srv/www/rpi/error.log" );
          }
