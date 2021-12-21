@@ -225,7 +225,8 @@ if( isset($_GET['get']) and $_GET['get']!='' ){
             unset( $rpi['cmd'] );
             $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
             //$rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
-            $rpi['ld']=$ld;
+            $rpi['ld']=$ld['localdata'];
+            $rpi['display']=$ld['display'];
             $r[$sn]=$rpi;
          }   
          header("Content-Type: application/json; charset=UTF-8");
