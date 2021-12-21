@@ -1,6 +1,7 @@
 <?php
         $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
         $rpi['theme']=($ld['display']=='oled13')?'mono':$dl['localdata']['theme'];
+        $service = $ld['display'];
 ?>
 <div class='w3-container'>
     <header>
@@ -49,9 +50,7 @@
             <h3>Update manager</h3>
         </header>
         <div class="w3-center" >
-            <?php foreach( $services as $service ){ ?>
             <a class="w3-button w3-green w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a>
-            <?php } ?>
         </div>    
     </article>
     </section>    
