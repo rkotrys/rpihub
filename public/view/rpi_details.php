@@ -15,11 +15,11 @@
         <div class='rpivalue'><?=$rpi['sn']?></div>
 </div>
 <div class='flex-container'>
-        <div class='rpikey'>display :</div>
+        <div class='rpikey rpi-display'>display :</div>
         <div class='rpivalue'><?=$ld['display']?></div>
 </div>
 <div class='flex-container'>
-        <div class='rpikey'>core temp: :</div>
+        <div class='rpikey rpi-coretemp'>core temp: :</div>
         <div class='rpivalue'><?=$ld['localdata']['coretemp']?></div>
 </div>
 <div class='flex-container  rpi-hostname'>
