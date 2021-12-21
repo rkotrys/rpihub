@@ -25,7 +25,7 @@ $(document).ready(function(){
                   $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                   $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                   $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
-                  $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text(rpi.ld.coretemp);
+                  //$("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text(rpi.ld.coretemp);
                 });               
         });
     }
