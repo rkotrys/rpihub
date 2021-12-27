@@ -28,6 +28,9 @@ $(document).ready(function(){
                     if( rpi.ld!=null ){
                       let t = rpi.ld.coretemp.valueOf();
                       $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text( t.toPrecision(3) );
+                      if( t > 50.0 ){
+                        $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").css("background-color", "red");
+                      }
                     }
                   }
                 });               
