@@ -29,7 +29,7 @@ $(document).ready(function(){
                       let t = rpi.ld.coretemp.valueOf();
                       $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text( t.toPrecision(3) );
                       if( t > 50.0 ){
-                        $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").css("background-color", "red");
+                        $("[sn="+rpi.sn+"] .rpi-coretemp").css("background-color", "red");
                       }
                     }
                   }
