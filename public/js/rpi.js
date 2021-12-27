@@ -26,9 +26,9 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
                     if( rpi.ld!=null ){
-                      let t = rpi.ld.coretemp.valueOf();
-                      $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text( t.toPrecision(1) );
-                      $("#logarea").html( $("#logarea").html()+" temp: "+t.toPrecision(1) );
+                      let t = (rpi.ld.coretemp).valueOf();
+                      $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text( ''+t );
+                      $("#logarea").html( $("#logarea").html()+" temp: "+t );
                     }
                   }
                 });               
