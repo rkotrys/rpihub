@@ -13,5 +13,6 @@
    <h1>RPI-hub</h1>
    </header>      
 <?php if( isset($content) ) print($content); ?>
+<div id='logarea'></div>
 </body>
 </html>
