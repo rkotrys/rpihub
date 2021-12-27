@@ -30,6 +30,8 @@ $(document).ready(function(){
                       $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text( t.toPrecision(3) );
                       if( t > 50.0 ){
                         $("[sn="+rpi.sn+"] .rpi-coretemp").css("background-color", "red");
+                      }else{
+                        $("[sn="+rpi.sn+"] .rpi-coretemp").css("background-color", "transparent");
                       }
                     }
                   }
