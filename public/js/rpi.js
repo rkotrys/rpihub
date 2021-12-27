@@ -20,16 +20,15 @@ $(document).ready(function(){
                   else 
                     $(".rpi[sn="+rpi.sn+"]").hide();
 
-                  
-                  $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
-                  $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
-                  $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
-                  $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
-                  if( rpi.ld!=null ){
-                     $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text(rpi.ld.coretemp);
-                     if( rpi.sn=='7de3fd0d'){
-                         $("#logarea").html( $("#logarea").html()+" temp: "+rpi.ld.coretemp );
-                     }
+                  if( rpi.online=='online'){
+                    $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
+                    $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
+                    $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
+                    $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
+                    if( rpi.ld!=null ){
+                      $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text(rpi.ld.coretemp);
+                        $("#logarea").html( $("#logarea").html()+" temp: "+rpi.ld.coretemp );
+                    }
                   }
                 });               
         });
