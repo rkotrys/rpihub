@@ -19,7 +19,7 @@
         <div class='rpivalue'><?=$ld['display']?></div>
 </div>
 <div class='flex-container rpi-coretemp'>
-        <div class='rpikey'>core temp: :</div>
+        <div class='rpikey'>core temp :</div>
         <div class='rpivalue'><?=$ld['localdata']['coretemp']?></div>
 </div>
 <div class='flex-container  rpi-hostname'>
