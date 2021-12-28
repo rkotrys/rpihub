@@ -292,4 +292,7 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
    }   
 }
 
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 view('main', array('content'=>$buf, 'do_reload'=>$do_reload ) );
