@@ -53,6 +53,20 @@
             <a class="w3-button w3-green w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a>
         </div>    
     </article>
+    <article  class="w3-card">
+        <header>
+            <h3>WLAN client manager</h3>
+        </header>
+        <div class="w3-center" >
+            <form id="wlan_client" method="get" action="">
+            <input name="essid" id="essid" type="text" value="<?=$dl['essid'] ?>" placeholder="WLAN ESSID" >
+            <input name="wlan_key" id="wlan_key" type="text" value="" placeholder="wpa-key">
+            <input type="hidden" name="set" value="wlan_client" >
+            <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
+            <button type="submit" name="submit" value="hostname" >Submit</button>
+            </form>
+        </div>    
+    </article>
     </section>    
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
