@@ -26,6 +26,10 @@
         <div class='rpikey'>hostname :</div>
         <div class='rpivalue'><?=$rpi['hostname']?></div>
 </div>
+<div class='flex-container  rpi-essid'>
+        <div class='rpikey'>ESSID :</div>
+        <div class='rpivalue'><?=$ld['essid']?></div>
+</div>
 <div class='flex-container  rpi-ip'>
         <div class='rpikey'>eth0 ip :</div>
         <div class='rpivalue'><?=$rpi['ip']?></div>
