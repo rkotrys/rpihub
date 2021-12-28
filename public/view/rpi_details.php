@@ -26,7 +26,7 @@
         <div class='rpikey'>hostname :</div>
         <div class='rpivalue'><?=$rpi['hostname']?></div>
 </div>
-<?php if( isset($ld['essid'] ) ){  ?>
+<?php if( isset($ld['localdata']['essid'] ) ){  ?>
 <div class='flex-container  rpi-essid'>
         <div class='rpikey'>ESSID :</div>
         <div class='rpivalue'><?=$ld['essid']?></div>
