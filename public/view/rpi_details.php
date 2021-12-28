@@ -29,7 +29,7 @@
 <?php if( isset($ld['localdata']['essid'] ) ){  ?>
 <div class='flex-container  rpi-essid'>
         <div class='rpikey'>ESSID :</div>
-        <div class='rpivalue'><?=$ld['essid']?></div>
+        <div class='rpivalue'><?=$ld['localdata']['essid']?></div>
 </div>
 <?php } ?>
 <div class='flex-container  rpi-ip'>
