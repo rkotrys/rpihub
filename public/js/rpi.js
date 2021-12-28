@@ -33,6 +33,7 @@ $(document).ready(function(){
                       }else{
                         $("[sn="+rpi.sn+"] .rpi-coretemp").css("background-color", "transparent");
                       }
+                      $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text( rpi.ld.essid );
                     }
                   }
                 });               
