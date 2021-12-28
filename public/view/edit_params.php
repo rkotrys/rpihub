@@ -33,7 +33,7 @@
             <input class="w3-input" name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
             <input type="hidden" name="set" value="hostname" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
-            <button  class="w3-button" type="submit" name="submit" value="hostname" >Submit</button>
+            <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" type="submit" name="submit" value="hostname" >Submit</button>
         </form>
             </article>
     <article  class="w3-card">
@@ -63,7 +63,7 @@
             <input class="w3-input" name="wlan_key" id="wlan_key" type="text" value="" placeholder="wpa-key">
             <input type="hidden" name="set" value="wlan_client" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
-            <button class="w3-button" type="submit" name="submit" value="hostname" >Submit</button>
+            <button class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" type="submit" name="submit" value="hostname" >Submit</button>
             </form>
         </div>    
     </article>
