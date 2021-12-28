@@ -30,10 +30,10 @@
             <h3>Set new hostname</h3>
         </header>
         <form method="get" action="" >
-            <input name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
+            <input class="w3-input" name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
             <input type="hidden" name="set" value="hostname" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
-            <button type="submit" name="submit" value="hostname" >Submit</button>
+            <button  class="w3-input" type="submit" name="submit" value="hostname" >Submit</button>
         </form>
             </article>
     <article  class="w3-card">
@@ -59,11 +59,11 @@
         </header>
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
-            <input name="essid" id="essid" type="text" value="<?=$dl['essid'] ?>" placeholder="WLAN ESSID" >
-            <input name="wlan_key" id="wlan_key" type="text" value="" placeholder="wpa-key">
+            <input class="w3-input" name="essid" id="essid" type="text" value="<?=$dl['essid'] ?>" placeholder="WLAN ESSID" >
+            <input class="w3-input" name="wlan_key" id="wlan_key" type="text" value="" placeholder="wpa-key">
             <input type="hidden" name="set" value="wlan_client" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
-            <button type="submit" name="submit" value="hostname" >Submit</button>
+            <button class="w3-input" type="submit" name="submit" value="hostname" >Submit</button>
             </form>
         </div>    
     </article>
