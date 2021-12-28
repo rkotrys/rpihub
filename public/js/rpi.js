@@ -34,7 +34,6 @@ $(document).ready(function(){
                         $("[sn="+rpi.sn+"] .rpi-coretemp").css("background-color", "transparent");
                       }
                       $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text( rpi.ld.essid );
-                      $("#logarea").text( rpi.ld.essid );
                     }
                   }
                 });               
