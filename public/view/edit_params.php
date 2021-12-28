@@ -60,7 +60,7 @@
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
             <input class="w3-input" name="essid" id="essid" type="text" value="<?=$ld['localdata']['essid'] ?>" placeholder="WLAN name (ESSID)" >
-            <input class="w3-input" name="wlan_key" id="wlan_key" type="text" value="" placeholder="wpa-key ( >= 8 char)">
+            <input class="w3-input" name="wpa_key" id="wpa_key" type="text" value="" placeholder="wpa-key ( >= 8 char)">
             <input type="hidden" name="set" value="wlan_client" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>

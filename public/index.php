@@ -286,6 +286,18 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
       exit;
       break;
 
+      case 'wlan_client':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $essid=$_GET['essid'];
+            $wpa_key=$_GET['wpa_key'];
+            $cmd=base64_encode( json_encode( array( 'name'=>'wlan_client', 'sn'=>$rpi['sn'], 'essid'=>$essid, 'wpa_key'=>$wpa_key ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");         
+      exit;
+      break;
+
       
       default:
          $buf="<h1>RPI: bad token</h1>";
