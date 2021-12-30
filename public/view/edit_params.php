@@ -59,9 +59,9 @@
         </header>
         <div class="w3-pannel" >
         <p>Aviable wlans:</p>    
-        <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
+        <?php  //foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
         <p><pre><code><?=print_r($ld['localdata']['scan'], True)?></code></pre></p>
-        <?php } ?>
+        <?php //} ?>
         </div>
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
