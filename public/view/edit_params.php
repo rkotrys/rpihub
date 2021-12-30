@@ -57,6 +57,11 @@
         <header>
             <h3>WLAN client manager</h3>
         </header>
+        <div class="w3-pannel" >
+        <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
+        <p><pre><code><?=print_r($ld['localdata']['scan'], True)?></code></pre></p>
+        <?php } ?>
+        </div>
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
             <input class="w3-input" name="essid" id="essid" type="text" value="<?=$ld['localdata']['essid'] ?>" placeholder="WLAN name (ESSID)" >
