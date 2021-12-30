@@ -26,6 +26,10 @@
         <div class='rpikey'>hostname :</div>
         <div class='rpivalue'><?=$rpi['hostname']?></div>
 </div>
+<div class='flex-container  rpi-msdid'>
+        <div class='rpikey'>msdid :</div>
+        <div class='rpivalue'><?=$ld['localdata']['msdid']?></div>
+</div>
 <?php if( isset($ld['localdata']['essid'] ) ){  ?>
 <div class='flex-container  rpi-essid'>
         <div class='rpikey'>ESSID :</div>
@@ -35,10 +39,6 @@
 <div class='flex-container  rpi-puuid'>
         <div class='rpikey'>puuid :</div>
         <div class='rpivalue'><?=$rpi['puuid']?></div>
-</div>
-<div class='flex-container  rpi-msdid'>
-        <div class='rpikey'>msdid :</div>
-        <div class='rpivalue'><?=$ld['localdata']['msdid']?></div>
 </div>
 <div class='flex-container  rpi-ip'>
         <div class='rpikey'>eth0 ip :</div>
