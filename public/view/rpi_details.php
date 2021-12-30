@@ -44,7 +44,7 @@
         <div class='rpikey'>arch :</div>
         <div class='rpivalue'><?=$rpi['arch']." ".$ld['localdata']['cpus'].' cpu(s)'?></div>
 </div>
-<?php foreach( $rpi as $k=>$v) { if( $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' or $k=='cmd' or 'arch' ) continue; ?>
+<?php foreach( $rpi as $k=>$v) { if( $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' or $k=='cmd' or $k=='arch' ) continue; ?>
     <div class='flex-container  rpi-<?=$k?>'>
         <div class='rpikey'><?=$k?> :</div>
         <div class='rpivalue'><?=$v?></div>
