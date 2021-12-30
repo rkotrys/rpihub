@@ -60,7 +60,7 @@
         <div class="w3-pannel"">
         <p>Aviable wlans:</p>    
         <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
-        <div style="text-align:center;padding-bottom: 6px;"><?=$k?>:<br>channel: <?=$c['chanel']?>, <?=$v['level']?> dB</div>
+        <div style="text-align:center;padding-bottom: 6px;"><?=$k?>:<br>channel: <?=$v['channel']?>, <?=$v['level']?> dB</div>
         <?php } ?>
         </div>
         <div class="w3-center" >
