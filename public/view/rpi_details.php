@@ -38,7 +38,7 @@
 <?php } ?>
 <div class='flex-container  rpi-wlans'>
         <div class='rpikey'>wlans :</div>
-        <div class='rpivalue'><?=$rpi['puuid']?></div>
+        <div class='rpivalue'><?=$ld['licaldata']['wlans']?></div>
 </div>
 <div class='flex-container  rpi-puuid'>
         <div class='rpikey'>PUUID :</div>
