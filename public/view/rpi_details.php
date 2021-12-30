@@ -40,6 +40,10 @@
         <div class='rpikey'>wlans :</div>
         <div class='rpivalue'><?=$rpi['puuid']?></div>
 </div>
+<div class='flex-container  rpi-puuid'>
+        <div class='rpikey'>PUUID :</div>
+        <div class='rpivalue'><?=$rpi['puuid']?></div>
+</div>
 <div class='flex-container  rpi-ip'>
         <div class='rpikey'>eth0 ip :</div>
         <div class='rpivalue'><?=$rpi['ip']?></div>
