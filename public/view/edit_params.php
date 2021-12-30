@@ -57,11 +57,11 @@
         <header>
             <h3>WLAN client manager</h3>
         </header>
-        <div class="w3-pannel" >
+        <div class="w3-pannel w3-text-center" >
         <p>Aviable wlans:</p>    
-        <?php  //foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
-        <p><pre><code>X: <?=print_r($ld['localdata'], True)?></code></pre></p>
-        <?php //} ?>
+        <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
+        <div><?=$k?>: <?=$v['address']?>, channel: <?=$c['channel']?>, <?=$v['level']?> dB</div>
+        <?php } ?>
         </div>
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
