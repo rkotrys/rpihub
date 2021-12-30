@@ -57,7 +57,7 @@
         <header>
             <h3>WLAN client manager</h3>
         </header>
-        <div class="w3-pannel w3-text-center" >
+        <div class="w3-pannel w3-center" style="text-align:center;">
         <p>Aviable wlans:</p>    
         <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
         <div><?=$k?>:<br>channel: <?=$c['channel']?>, <?=$v['level']?> dB</div>
