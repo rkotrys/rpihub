@@ -48,11 +48,11 @@
         <div class='rpikey'>wlan0 ip :</div>
         <div class='rpivalue'><?=$rpi['wip']?></div>
 </div>
-<div class='flex-container  rpi-ip'>
+<div class='flex-container  rpi-emac'>
         <div class='rpikey'>eth0 MAC :</div>
         <div class='rpivalue'><?=$rpi['emac']?></div>
 </div>
-<div class='flex-container  rpi-wip'>
+<div class='flex-container  rpi-wmac'>
         <div class='rpikey'>wlan0 MAC :</div>
         <div class='rpivalue'><?=$rpi['wmac']?></div>
 </div>
