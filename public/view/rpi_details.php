@@ -36,10 +36,6 @@
         <div class='rpivalue'><?=$ld['localdata']['essid']?></div>
 </div>
 <?php } ?>
-<div class='flex-container  rpi-wlans'>
-        <div class='rpikey'>Known WLANs :</div>
-        <div class='rpivalue'><?=$ld['localdata']['wlans']?></div>
-</div>
 <div class='flex-container  rpi-puuid'>
         <div class='rpikey'>puuid :</div>
         <div class='rpivalue'><?=$rpi['puuid']?></div>
