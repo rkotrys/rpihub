@@ -64,9 +64,11 @@
         <tr><th>Name</th><th class="w3-center">Chanell</th><th>Level</th></tr>   
         </thead>
         <?php  
-        $wlans = sorted( $ld['localdata']['scan'].items(), key = lambda kv:(float(kv['level'])) )
-        foreach(  $wlans as $k=>$v){  ?>
-        <tr><td>"<?=$v['essid']?>"</td><td class="w3-center"><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
+        $wlans=[];
+        print( array_keys($ld['localdata']['wlans']['IR2022']));
+        //foreach( $ld['localdata']['wlans'] as $k=>$v )  wlans[$k] = $v['level'];
+        foreach(  asort($wlans) as $k=>$v){  ?>
+        <tr><td>"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['wlans']['channell']?></td><td><?=$ld['localdata']['wlans']['level']?>dB</td></tr>
         <?php } ?>
         </table>        
         </div>
