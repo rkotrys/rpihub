@@ -71,7 +71,7 @@
         $wlans=array_reverse($wlans);
         print( print_r($wlans, TRUE) );
         foreach(  $wlans as $k=>$v){  ?>
-        <tr><td>"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan']['channel']?></td><td><?=$ld['localdata']['scan']['level']?>dB</td></tr>
+        <tr><td>"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php } ?>
         </table>        
         </div>
