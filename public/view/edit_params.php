@@ -66,7 +66,7 @@
         <?php  
         $wlans = sorted( $ld['localdata']['scan'].items(), key = lambda kv:(float(kv['level'])) )
         foreach(  $wlans as $k=>$v){  ?>
-        <tr><td>"<?=$v['name']?>"</td><td class="w3-center"><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
+        <tr><td>"<?=$v['essid']?>"</td><td class="w3-center"><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
         <?php } ?>
         </table>        
         </div>
