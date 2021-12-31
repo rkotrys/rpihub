@@ -61,8 +61,9 @@
         <div class="w3-panel w3-silver">Aviable wlans:</div>    
         
         <table class="w3-table-all">
-        <thead>    
-        <tr><td>Name</td><td>Chanell</td><td>Level</td></tr>   
+        <thead class="w3-light-grey">
+        <tr><th colspan="3"></th></tr>        
+        <tr><th>Name</th><th>Chanell</th><th>Level</th></tr>   
         </thead>
         <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
         <tr><td>"<?=$k?>"</td><td><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
