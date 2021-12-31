@@ -58,13 +58,13 @@
             <h3>WLAN client manager</h3>
         </header>
         <div class="w3-panel w3-left-align">
-        <table class="w3-table-all">
+        <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
         <tr><th colspan="3">Aviable wlans:</th></tr>        
-        <tr><th>Name</th><th>Chanell</th><th>Level</th></tr>   
+        <tr><th>Name</th><th class="w3-center">Chanell</th><th>Level</th></tr>   
         </thead>
         <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
-        <tr><td>"<?=$k?>"</td><td><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
+        <tr><td>"<?=$k?>"</td><td class="w3-center"><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
         <?php } ?>
         </table>        
         </div>
