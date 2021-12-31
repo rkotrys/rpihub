@@ -57,11 +57,17 @@
         <header>
             <h3>WLAN client manager</h3>
         </header>
-        <div class="w3-pannel"">
-        <p>Aviable wlans:</p>    
+        <div class="w3-panel w3-left-align">
+        <div class="w3-panel w3-silver">Aviable wlans:</div>    
+        
+        <table class="w3-table-all">
+        <thead>    
+        <tr><td>Name</td><td>Chanell</td><td>Level</td></tr>   
+        </thead>
         <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
-        <div style="text-align:center;padding-bottom: 6px;"><?=$k?>:<br>channel: <?=$v['channel']?>, <?=$v['level']?> dB</div>
+        <tr><td><?=$k?></td><td><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
         <?php } ?>
+        </table>        
         </div>
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
