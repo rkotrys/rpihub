@@ -75,6 +75,7 @@
         </div>
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
+            <label>Connect to WLAN:</label>   
             <input class="w3-input" name="essid" id="essid" type="text" value="<?=$ld['localdata']['essid'] ?>" placeholder="WLAN name (ESSID)" >
             <input class="w3-input" name="wpa_key" id="wpa_key" type="text" value="" placeholder="wpa-key ( >= 8 char)">
             <input type="hidden" name="set" value="wlan_client" >
