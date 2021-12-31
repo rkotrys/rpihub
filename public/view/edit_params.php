@@ -65,11 +65,9 @@
         </thead>
         <?php  
         $wlans=[];
-        print( print_r( $ld['localdata']['scan']['IR2022'], TRUE) );
         foreach( $ld['localdata']['scan'] as $k=>$v )  { $wlans[$k] = $v['level']; }
         asort($wlans);
         $wlans=array_reverse($wlans);
-        print( print_r($wlans, TRUE) );
         foreach(  $wlans as $k=>$v){  ?>
         <tr><td style="font-weight:bold;">"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php } ?>
