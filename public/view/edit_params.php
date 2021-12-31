@@ -63,8 +63,10 @@
         <tr><th colspan="3">Aviable wlans:</th></tr>        
         <tr><th>Name</th><th class="w3-center">Chanell</th><th>Level</th></tr>   
         </thead>
-        <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
-        <tr><td>"<?=$k?>"</td><td class="w3-center"><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
+        <?php  
+        $wlans = sorted( $ld['localdata']['scan'].items(), key = lambda kv:(float(kv['level'])) )
+        foreach(  $wlans as $k=>$v){  ?>
+        <tr><td>"<?=$v['name']?>"</td><td class="w3-center"><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
         <?php } ?>
         </table>        
         </div>
