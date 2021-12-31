@@ -65,7 +65,7 @@
         <tr><td>Name</td><td>Chanell</td><td>Level</td></tr>   
         </thead>
         <?php  foreach( $ld['localdata']['scan'] as $k=>$v){  ?>
-        <tr><td><?=$k?></td><td><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
+        <tr><td>"<?=$k?>"</td><td><?=$v['channel']?></td><td><?=$v['level']?>dB</td></tr>
         <?php } ?>
         </table>        
         </div>
