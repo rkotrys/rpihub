@@ -60,7 +60,7 @@ body {
 }
 td.wlan_name {
     font-weight: bold;
-    color:#222;
+    color:#444;
 }
 #rpi-details > article {
     width: 300px;
