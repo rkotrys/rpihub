@@ -65,12 +65,13 @@
         </thead>
         <?php  
         $wlans=[];
+        $wlan_no=0;
         foreach( $ld['localdata']['scan'] as $k=>$v )  { $wlans[$k] = $v['level']; }
         asort($wlans);
         $wlans=array_reverse($wlans);
         foreach(  $wlans as $k=>$v){  ?>
-        <tr><td style="font-weight:bold;">"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
-        <?php } ?>
+        <tr><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
+        <?php $wlan_no+=1; } ?>
         </table>        
         </div>
         <div class="w3-center" >
@@ -89,3 +90,4 @@
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
 </div>
+<script src="js/rpi_edit_params.js"></script>

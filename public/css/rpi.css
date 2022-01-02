@@ -58,6 +58,10 @@ body {
 .rpi > .rpi-sn {
     font-weight: bold;
 }
+td.wlan_name {
+    font-weight: bold;
+    color:#222;
+}
 #rpi-details > article {
     width: 300px;
     margin: 6px;
