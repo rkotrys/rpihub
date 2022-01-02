@@ -61,14 +61,14 @@
         <div class='rpivalue'><?=$rpi['wmac']?></div>
 </div>
 <div class='flex-container  rpi-memtotal'>
-        <div class='rpikey'>RAM :</div>
-        <div class='rpivalue'><?=$ld['localdata']['memavaiable']?> of <?=$rpi['memtotal']?> MB</div>
+        <div class='rpikey'>RAM free:</div>
+        <div class='rpivalue'><?=$ld['localdata']['memavaiable']?> / <?=$rpi['memtotal']?> MB</div>
 </div>
 <div class='flex-container  rpi-arch'>
         <div class='rpikey'>arch :</div>
         <div class='rpivalue'><?=$rpi['arch']." ".$ld['localdata']['cpus'].' cpu(s)'?></div>
 </div>
-<?php foreach( $rpi as $k=>$v) { if( $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' or $k=='cmd' or $k=='arch' or $k=='emac' or $k=='wmac' or $k=='puuid' ) continue; ?>
+<?php foreach( $rpi as $k=>$v) { if( $k=='memtotal' or $k=='model' or $k=='sn'  or $k=='hostname' or $k=='ip' or $k=='wip' or $k=='cmd' or $k=='arch' or $k=='emac' or $k=='wmac' or $k=='puuid' ) continue; ?>
     <div class='flex-container  rpi-<?=$k?>'>
         <div class='rpikey'><?=$k?> :</div>
         <div class='rpivalue'><?=$v?></div>
