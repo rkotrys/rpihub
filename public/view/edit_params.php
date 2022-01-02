@@ -53,7 +53,7 @@
             <a class="w3-button w3-green w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=update&service=<?=$service?>&sn=<?=$rpi['sn']?>' >Update service: <?=$service?></a>
         </div>    
     </article>
-    <article  class="w3-card">
+    <article  class="w3-card wlan_client_manager">
         <header>
             <h3>WLAN client manager</h3>
         </header>
@@ -65,7 +65,6 @@
         </thead>
         <?php  
         $wlans=[];
-        $wlan_no=0;
         foreach( $ld['localdata']['scan'] as $k=>$v )  { $wlans[$k] = $v['level']; }
         asort($wlans);
         $wlans=array_reverse($wlans);
@@ -83,11 +82,11 @@
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
             </form>
-        </div>    
+        </div> 
     </article>
     </section>    
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
 </div>
-<script src="js/rpi_edit_params.js"></script>
+<script src="js/rpi_edit_params.js"></script>   
