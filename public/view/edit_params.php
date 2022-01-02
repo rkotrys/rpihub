@@ -57,7 +57,7 @@
         <header>
             <h3>WLAN client manager</h3>
         </header>
-        <div class="w3-panel w3-left-align">
+        <!--<div class="w3-panel w3-left-align">-->
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
         <tr><th colspan="3">Aviable wlans:</th></tr>        
@@ -72,7 +72,7 @@
         <tr><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php $wlan_no+=1; } ?>
         </table>        
-        </div>
+        <!--</div>-->
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
             <label>Connect to WLAN</label>   
