@@ -60,6 +60,10 @@
         <div class='rpikey'>wlan0 MAC :</div>
         <div class='rpivalue'><?=$rpi['wmac']?></div>
 </div>
+<div class='flex-container  rpi-memtotal'>
+        <div class='rpikey'>RAM :</div>
+        <div class='rpivalue'><?=$ld['localdata']['memavaiable']?> of <?=$rpi['memtotal']?> MB</div>
+</div>
 <div class='flex-container  rpi-arch'>
         <div class='rpikey'>arch :</div>
         <div class='rpivalue'><?=$rpi['arch']." ".$ld['localdata']['cpus'].' cpu(s)'?></div>
