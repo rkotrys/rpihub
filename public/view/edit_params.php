@@ -68,10 +68,10 @@
         foreach( $ld['localdata']['scan'] as $k=>$v )  { $wlans[$k] = $v['level']; }
         asort($wlans);
         $wlans=array_reverse($wlans);
-        wno=1;
+        $wno=1;
         foreach(  $wlans as $k=>$v){  
            if( $v['level'])<-85 ) break;
-           if( $wno++ > 10 ) break;
+           if( ($wno++) > 10 ) break;
         ?>
         <tr><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"<br><?=$ld['localdata']['scan'][$k]['address']?></td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php $wlan_no+=1; } ?>
