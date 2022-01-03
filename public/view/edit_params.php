@@ -73,10 +73,9 @@
            if( $ld['localdata']['scan'][$k]['level'] < -85 ) break;
            if( $wno > 10 ) {break;} 
            else $wno+=1;
-           if( $ld['localdata']['wlan_id']==$ld['localdata']['scan'][$k]['address']) $onflag=True;
-           else $onflag=False;
+           $onflag = ($ld['localdata']['wlan_id']==$ld['localdata']['scan'][$k]['address'])?True:False;
         ?>
-        <tr><td class="wlan_name <?=($onflag):'w3-khaki':'';?>" wlan_name="<?=$k?>">"<?=$k?>"<br><?=$ld['localdata']['scan'][$k]['address']?></td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
+        <tr><td class="wlan_name <?=($onflag):'w3-khaki':''?>" wlan_name="<?=$k?>">"<?=$k?>"<br><?=$ld['localdata']['scan'][$k]['address']?></td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php $wlan_no+=1; } ?>
         </table>        
         <!--</div>-->
