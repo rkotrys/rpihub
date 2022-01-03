@@ -69,7 +69,7 @@
         asort($wlans);
         $wlans=array_reverse($wlans);
         foreach(  $wlans as $k=>$v){  ?>
-        <tr><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"</td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
+        <tr><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"<br><?=$ld['localdata']['scan'][$k]['address']?></td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php $wlan_no+=1; } ?>
         </table>        
         <!--</div>-->
