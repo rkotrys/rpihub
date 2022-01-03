@@ -70,7 +70,7 @@
         $wlans=array_reverse($wlans);
         $wno=1;
         foreach(  $wlans as $k=>$v){  
-//           if( float( $v['level'] ) < -85 ) break;
+           if( $ld['localdata']['scan'][$k]['level'] < -85 ) break;
            if( $wno > 10 ) {break;} 
            else $wno+=1;
         ?>
