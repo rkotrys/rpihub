@@ -40,10 +40,10 @@
 <?php  $w=explode(',',$ld['localdata']['wlans'] ); 
    $wlans="";
    if( isset($ld['localdata']['essid'] ) )
-      foreach($w as $v) {$wlans .= ($ld['localdata']['essid']==$v)?" <strong>$v</strong>":" $v"; }
+      foreach($w as $v) {$wlans .= ($ld['localdata']['essid']==$v)?"<strong>$v</strong><":"<br>$v"; }
 ?>        
         <div class='rpikey'>wlans :</div>
-        <div class='rpivalue'><?=$w[0]?> <?=$wlans?></div>
+        <div class='rpivalue'><?=$wlans?></div>
 </div>
 <div class='flex-container  rpi-puuid'>
         <div class='rpikey'>PUUID :</div>
