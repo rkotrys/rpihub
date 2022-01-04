@@ -12,7 +12,7 @@
     <?php if( $rpi['theme']!='mono' ) { ?>    
     <article class="w3-card">
         <header class="w3-panel">
-            <h3>Color of the clock face</h3>
+            <div>Color of the clock face</div>
         </header>
         <ol>
         <?php foreach( $faces as $face ) { ?>    
