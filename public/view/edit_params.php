@@ -12,7 +12,7 @@
     <?php if( $rpi['theme']!='mono' ) { ?>    
     <article class="w3-card">
         <header class="w3-panel">
-            <div>Color of the clock face</div>
+            <h3>Color of the clock face</h3>
         </header>
         <ol>
         <?php foreach( $faces as $face ) { ?>    
@@ -26,7 +26,7 @@
     </article>
     <?php } //ecd of theme card ?>
     <article  class="w3-card">
-        <header>
+        <header  class="w3-panel">
             <h3>Set new hostname</h3>
         </header>
         <form method="get" action="" >
