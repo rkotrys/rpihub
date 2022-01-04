@@ -11,7 +11,7 @@
     <section  class="rpi-list" id="rpi-details" >
     <?php if( $rpi['theme']!='mono' ) { ?>    
     <article class="w3-card">
-        <header>
+        <header class="w3-panel">
             <h3>Color of the clock face</h3>
         </header>
         <ol>
