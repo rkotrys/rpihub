@@ -9,7 +9,7 @@
         <h4>HOST:  <strong><?=$rpi['hostname']?></strong>, PUUID: <strong><?=$rpi['puuid']?></strong>, msdid: <strong><?=$ld['localdata']['msdid']?></strong>, display: <strong><?=$ld['display']?></strong></h4>
     </header>
     <section  class="rpi-list" id="rpi-details" >
-    <?php if( $rpi['theme']!='mono' ) { ?>    
+    <?php if( $rpi['theme']!='mono' and $rpi['theme']!='headless' ) { ?>    
     <article class="w3-card">
         <header class="w3-panel">
             <h3>Color of the clock face</h3>
