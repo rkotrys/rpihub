@@ -26,7 +26,7 @@
     </article>
     <?php } //ecd of theme card ?>
     <article  class="w3-card">
-        <header  class="w3-panel">
+        <header >
             <h3>Set new hostname</h3>
         </header>
         <form method="get" action="" >
