@@ -39,7 +39,7 @@
 <div class='flex-container  rpi-wlans'>
 <?php  $w=explode(',',isset($ld['localdata']['wlans']) ); 
    $wlans="";
-   if( isset($ld['localdata']['essid'] )
+   if( isset($ld['localdata']['essid'] ) )
       foreach($w as $v) {$wlans .= ($ld['localdata']['essid']==$v)?"<strong>$v</strong>,":"$v"; }
 ?>        
         <div class='rpikey'>wlans :</div>
