@@ -1,6 +1,6 @@
 <?php
         $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
-        //$rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
+        $rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
         $service = $ld['display'];
 ?>
 <div class='w3-container'>
