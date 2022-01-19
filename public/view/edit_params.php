@@ -110,7 +110,7 @@
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
         <?php } ?>
         </table>
-        ld: <?=print_r($ld,true)?>
+        ld: <?=print_r( base64_decode( $rpi['theme'] ),true)?>
     </article>
 
     </section>    
