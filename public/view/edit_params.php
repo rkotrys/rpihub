@@ -110,6 +110,7 @@
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
         <?php } ?>
         </table>
+        ld: <?=print_r($ld,true)?>
     </article>
 
     </section>    
