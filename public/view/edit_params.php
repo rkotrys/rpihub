@@ -97,11 +97,17 @@
         </header>
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
+        <tr><th colspan="2">:</th></tr>        
+        <tr><th>name</th><th>value</th></tr>   
+        </thead>
+        <?php foreach( $rpi as $k=>$v ){ ?>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
+        <?php } ?>
         <tr><th colspan="2">localdata:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
         <?php foreach( $ld['localdata'] as $k=>$v ){ ?>
-            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
         <?php } ?>
         </table>
     </article>
