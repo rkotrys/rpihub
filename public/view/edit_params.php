@@ -101,22 +101,18 @@
         <tr><th>name</th><th>value</th></tr>   
         </thead>
         <?php foreach( $rpi as $k=>$v ){ ?>
-            <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
         <tr><th colspan="2">localdata:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
         <?php foreach( $ld['localdata'] as $k=>$v ){ ?>
-            <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
         </table>
     </article>
 
     </section>    
-        <div>
-        $rpi[theme]: <?=$rpi['theme']?><br>
-        ld: <?=print_r( base64_decode( $rpi['theme']), true)?>
-        </div>
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
