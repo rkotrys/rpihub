@@ -92,7 +92,6 @@
     </article>
 
     <article  class="w3-card wlan_client_manager">
-    </article>
         <header>
             <h3>Debag info</h3>
         </header>
@@ -105,6 +104,7 @@
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
         </table>
+    </article>
 
     </section>    
     <footer>
