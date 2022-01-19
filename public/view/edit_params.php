@@ -90,6 +90,22 @@
             </form>
         </div> 
     </article>
+
+    <article  class="w3-card wlan_client_manager">
+    </article>
+        <header>
+            <h3>Debag info</h3>
+        </header>
+        <table class="w3-table-all w3-hoverable w3-tiny">
+        <thead class="w3-light-grey">
+        <tr><th colspan="2">localdata:</th></tr>        
+        <tr><th>name</th><th>value</th></tr>   
+        </thead>
+        <?php foreach( $ld['localdata'] as $k=>$v ){ ?>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
+        <?php } ?>
+        </table>
+
     </section>    
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
