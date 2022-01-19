@@ -110,10 +110,13 @@
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?print_r($v,true):$v?></td></tr>
         <?php } ?>
         </table>
-        ld: <?=print_r( base64_decode( $rpi['theme'], true), true)?>
     </article>
 
     </section>    
+        <div>
+        $rpi[theme]: <?=$rpi['theme']?><br>
+        ld: <?=print_r( base64_decode( $rpi['theme']), true)?>
+        </div>
     <footer>
         <p><a class="w3-button w3-blue w3-round w3-small" href='?get=getall'>Go back to RPi list</a></p>
     </footer>
