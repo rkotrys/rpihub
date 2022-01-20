@@ -100,7 +100,7 @@
         <tr class="w3-indigo" id="rpi"><th colspan="2" >rpi:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
-        <tbody class="w3-hide" id="rpi_body">
+        <tbody id="rpi_body">
         <?php foreach( $rpi as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
@@ -108,7 +108,7 @@
         <tr class="w3-indigo"><th colspan="2" id="localdata">localdata:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
-        <tbody class="w3-hide" id="localdata_body">
+        <tbody id="localdata_body">
         <?php foreach( $ld['localdata'] as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
