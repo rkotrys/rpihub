@@ -91,7 +91,7 @@
         </div> 
     </article>
 
-    <article  class="w3-card wlan_client_manager">
+    <article  class="w3-card ">
         <header>
             <h3>Debag info</h3>
         </header>
