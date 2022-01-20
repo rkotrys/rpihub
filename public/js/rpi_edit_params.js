@@ -3,10 +3,10 @@ $(document).ready(function(){
        $("input[name='essid']").val( $(this).attr("wlan_name"));
    });
    $("#rpi").click( function(){
-       $("#rpi_body").toggleClass('w3_hide') ;
+       $("#rpi_body").slideToggle() ;
    });
    $("#localdata").click( function(){
-      $("#localdata_body").toggleClass('w3_hide') ;
+      $("#localdata_body").slideToggle() ;
    });
 
 });
