@@ -88,3 +88,6 @@ td.wlan_name {
    text-align:center;
    
 }
+#rpi_body, #localdata_body {
+    display: none;
+}
