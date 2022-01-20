@@ -97,7 +97,7 @@
         </header>
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
-        <tr class="w3-indigo"><th colspan="2" id="rpi">rpi:</th></tr>        
+        <tr class="w3-indigo" id="rpi"><th colspan="2" >rpi:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
         <tbody class="w3-hide" id="rpi_body">
