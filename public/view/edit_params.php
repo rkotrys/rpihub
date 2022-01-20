@@ -91,24 +91,24 @@
         </div> 
     </article>
 
-    <article  class="w3-card ">
+    <article  class="w3-card" id="debug_info">
         <header>
             <h3>Debag info</h3>
         </header>
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
-        <tr class="w3-indigo"><th colspan="2">rpi:</th></tr>        
+        <tr class="w3-indigo"><th colspan="2" id="rpi">rpi:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
-        <tbody class="w3-hide" id="rpi">
+        <tbody class="w3-hide" id="rpi_body">
         <?php foreach( $rpi as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
         </tbody>
-        <tr class="w3-indigo"><th colspan="2">localdata:</th></tr>        
+        <tr class="w3-indigo"><th colspan="2" id="localdata">localdata:</th></tr>        
         <tr><th>name</th><th>value</th></tr>   
         </thead>
-        <tbody class="w3-hide" id="localdata">
+        <tbody class="w3-hide" id="localdata_body">
         <?php foreach( $ld['localdata'] as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php } ?>
