@@ -60,9 +60,10 @@
         <!--<div class="w3-panel w3-left-align">-->
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
-        <tr class="w3-indigo"><th colspan="3">Aviable wlans:</th></tr>        
+        <tr class="w3-indigo" id="wlan_nets"><th colspan="3">Aviable wlans:</th></tr>        
         <tr><th>Name</th><th class="w3-center">Chanell</th><th>Level</th></tr>   
         </thead>
+        <tbody id="wlan_nets_body"> 
         <?php  
         $wlans=[];
         foreach( $ld['localdata']['scan'] as $k=>$v )  { $wlans[$k] = $v['level']; }
@@ -77,6 +78,7 @@
         ?>
         <tr class="<?=($onflag)?'w3-khaki':''?>"><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"<br><?=$ld['localdata']['scan'][$k]['address']?></td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php $wlan_no+=1; } ?>
+        </tbody>
         </table>        
         <!--</div>-->
         <div class="w3-center" >
