@@ -60,7 +60,7 @@
         <!--<div class="w3-panel w3-left-align">-->
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
-        <tr><th colspan="3">Aviable wlans:</th></tr>        
+        <tr class="w3-indigo"><th colspan="3">Aviable wlans:</th></tr>        
         <tr><th>Name</th><th class="w3-center">Chanell</th><th>Level</th></tr>   
         </thead>
         <?php  
