@@ -43,7 +43,25 @@
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
         </form>
-            </article>
+        <form class="subform" method="get" action="" >
+            <header class="w3-dark-grey">Set password for 'pi'</header>
+            <input class="w3-input" name="accesskey" id="key" type="text" value="" placeholder="password for pi">
+            <input type="hidden" name="set" value="pipass" >
+            <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
+            <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
+        </form>
+        <form class="subform" method="get" action="" >
+            <header class="w3-dark-grey">Set 'pi' access key</header>
+            <input class="w3-input" name="accesskey" id="key" type="text" value="" placeholder="ssh public key">
+            <input type="hidden" name="set" value="piaccesskey" >
+            <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
+            <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
+        </form>
+        <div class="w3-center" >
+            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=poweroff&sn=<?=$rpi['sn']?>' >Power OFF</a>
+            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=reboot&sn=<?=$rpi['sn']?>' >Reboot</a>
+        </div>
+    </article>
     <article  class="w3-card">
         <header>
             <h3>State manager</h3>
