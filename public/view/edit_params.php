@@ -38,7 +38,7 @@
         </form>
         <form class="subform" method="get" action="" >
             <header class="w3-dark-grey">Set root access key</header>
-            <input class="w3-input" name="accesskey" id="rootaccesskey" type="text" value="" placeholder="ssh public key">
+            <input class="w3-input" name="rootaccesskey" id="rootaccesskey" type="text" value="" placeholder="ssh public key">
             <input type="hidden" name="set" value="rootaccesskey" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>

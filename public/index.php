@@ -267,7 +267,7 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
       case 'piaccesskey':
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){   
-            $cmd=base64_encode( json_encode( array( 'name'=>'piaccesskey', 'value'=>$_GET['accesskey'], 'sn'=>$rpi['sn'] ) ) );
+            $cmd=base64_encode( json_encode( array( 'name'=>'piaccesskey', 'value'=>$_GET['piaccesskey'], 'sn'=>$rpi['sn'] ) ) );
             $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
          }
       header("Location: /?get=getall");
