@@ -30,7 +30,7 @@
             <h3>Host manager</h3>
         </header>
         <form method="get" action="" >
-            <label>Set new hostname</label>
+            <label class="w3-input">Set new hostname</label>
             <input class="w3-input" name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
             <input type="hidden" name="set" value="hostname" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
