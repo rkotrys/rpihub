@@ -36,6 +36,13 @@
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
         </form>
+        <form class="subform" method="get" action="" >
+            <header class="w3-dark-grey">Set root access key</header>
+            <input class="w3-input" name="accesskey" id="key" type="text" value="<?=$rpi['hostname']?>">
+            <input type="hidden" name="set" value="rootaccesskey" >
+            <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
+            <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
+        </form>
             </article>
     <article  class="w3-card">
         <header>
