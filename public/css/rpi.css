@@ -88,6 +88,9 @@ td.wlan_name {
    text-align:center;
    
 }
+article form.subform {
+    padding: 0 0 6px 0
+}
 #rpi_body, 
 #localdata_body,
 #wlan_nets_body {
