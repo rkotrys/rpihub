@@ -32,7 +32,7 @@
 </div>
 <div class='flex-container  rpi-AP'>
         <div class='rpikey'>mode :</div>
-        <div class='rpivalue'><?=($ld['localdata']['AP'])?'AP, '.$ld['localdata']['AP']['ssid']:'station'?></div>
+        <div class='rpivalue'><?=($ld['localdata']['AP'])?'AP, ['.$ld['localdata']['AP']['ssid'].']':'station'?></div>
 </div>
 
 <?php if( isset($ld['localdata']['essid'] ) ){  ?>
