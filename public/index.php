@@ -255,7 +255,33 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
       header("Location: /?get=getall");
       exit;
       break;      
-
+      case 'rootaccesskey':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'rootaccesskey', 'value'=>$_GET['rootaccesskey'], 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");
+      exit;
+      break;      
+      case 'piaccesskey':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'piaccesskey', 'value'=>$_GET['accesskey'], 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");
+      exit;
+      break;      
+      case 'pipass':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'pipass', 'value'=>$_GET['pipass'], 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");
+      exit;
+      break;      
       case 'update':
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){   
