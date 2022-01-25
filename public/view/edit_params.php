@@ -4,14 +4,15 @@
         $service = $ld['display'];
 
 function setparamform( $header, $name, $sn, $value="" ){
-$buf = <<<END 
-<form class="subform" method="get" action="" >
-<header class="w3-dark-grey">$header</header>
-<input class="w3-input" name="$name" id="$name" type="text" value="$value" placeholder="$placeholder">
-<input type="hidden" name="set" value="$name" >
-<input type="hidden" name="sn" value="$sn" >
-<button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="$name" >Submit</button>
+$buf = "
+<form class=\"subform\" method=\"get\" action=\"\" >
+<header class=\"w3-dark-grey\">$header</header>
+<input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" placeholder=\"$placeholder\">
+<input type=\"hidden\" name=\"set\" value=\"$name\" >
+<input type=\"hidden\" name=\"sn\" value=\"$sn\" >
+<button  class=\"w3-button w3-red w3-round w3-small\" style=\"color:red;margin-top:6px;\" type=\"submit\" name=\"submit\" value=\"$name\" >Submit</button>
 </form>
+";
 END;
 echo $buf;
 }
