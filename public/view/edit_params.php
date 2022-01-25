@@ -3,7 +3,7 @@
         $rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
         $service = $ld['display'];
 
-function setparam( $header, $name, $sn, $value="" ){
+function setparam( $header, $name, $sn, $value="",$placeholder="" ){
 $buf = "
 <form class=\"subform\" method=\"get\" action=\"\" >
 <header class=\"w3-left-align w3-border-bottom\">$header</header>
@@ -49,14 +49,9 @@ echo $buf;
         <header >
             <h3>Host manager</h3>
         </header>
-        <?=setparam("Set new hostname1","hostname",$rpi['sn'],$rpi['hostname']);?>
-        <form class="subform" method="get" action="" >
-            <header class="w3-dark-grey">Set new hostname</header>
-            <input class="w3-input" name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
-            <input type="hidden" name="set" value="hostname" >
-            <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
-            <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
-        </form>
+        <?=setparam("Set new hostname","hostname",$rpi['sn'],$rpi['hostname']);?>
+        <?=setparam("Set root access key","rootaccesskey",$rpi['sn'],"","ssh public key");?>
+
         <form class="subform" method="get" action="" >
             <header class="w3-dark-grey">Set root access key</header>
             <input class="w3-input" name="rootaccesskey" id="rootaccesskey" type="text" value="" placeholder="ssh public key">
