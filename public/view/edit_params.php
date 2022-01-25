@@ -8,10 +8,10 @@ $buf = "
 <form class=\"subform\" method=\"get\" action=\"\" >
 <header class=\"w3-left-align w3-border-bottom\">$header</header>
 <div class=\"w3-row\">
-<div class=\"w3-col m11 l10\">
+<div class=\"w3-col m8 l8\">
 <input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" placeholder=\"$placeholder\">
 </div>
-<div class=\"w3-col m3 l2\">
+<div class=\"w3-col m4 l4\">
 <button  class=\"w3-button w3-red w3-round w3-small\" style=\"color:red;margin-top:6px;\" type=\"submit\" name=\"submit\" value=\"$name\" >Submit</button>
 </div>
 </div>
