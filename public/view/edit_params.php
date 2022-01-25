@@ -74,7 +74,7 @@
         <?php }else{ ?>
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead>
-        <tr colspan="2"><th>AP config:</th><tr>
+        <tr class="w3-indigo" id="apconfig" colspan="2"><th>AP config:</th><tr>
         </thead>
         <tbody>
         <?php foreach( $ld['localdata']['AP'] as $k=>$v){ ?>
