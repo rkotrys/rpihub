@@ -6,7 +6,7 @@
 function setparam( $header, $name, $sn, $value="" ){
 $buf = "
 <form class=\"subform\" method=\"get\" action=\"\" >
-<header class=\"w3-dark-grey\">$header</header>
+<header class=\"w3-dark-grey w3-left-align w3-border-bottom\">$header</header>
 <input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" placeholder=\"$placeholder\">
 <input type=\"hidden\" name=\"set\" value=\"$name\" >
 <input type=\"hidden\" name=\"sn\" value=\"$sn\" >
