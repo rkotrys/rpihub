@@ -103,6 +103,7 @@
         <div class="w3-center" >
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanclient&sn=<?=$rpi['sn']?>' >Swich to<br>WLAN Client</a>            
         </div>
+        <?php } ?>
         <!--</div>-->
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
