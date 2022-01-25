@@ -67,9 +67,11 @@
         <header>
             <h3>AP manager</h3>
         </header>
+        <?php if( is_array( $ld['localdata']['AP'])  ) { ?>
         <div class="w3-center" >
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanAP&sn=<?=$rpi['sn']?>' >Swich to<br>Access Point</a>            
         </div>
+        <?php } ?>
     </article>
     <article  class="w3-card wlan_client_manager">
         <header>
