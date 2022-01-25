@@ -76,7 +76,7 @@
         <thead>
         <tr class="w3-indigo" id="apconfig"><th colspan="2">AP config:</th><tr>
         </thead>
-        <tbody>
+        <tbody id="apconfig_body">
         <?php foreach( $ld['localdata']['AP'] as $k=>$v){ ?>
         <tr><td><?=$k?>:</td><td><?=$v?></td></tr>      
         <?php } ?>  

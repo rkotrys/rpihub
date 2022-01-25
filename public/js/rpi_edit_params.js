@@ -11,5 +11,8 @@ $(document).ready(function(){
    $("#localdata").click( function(){
       $("#localdata_body").toggle() ;
    });
+   $("#apconfig").click( function(){
+    $("#apconfig_body").toggle() ;
+ });
 
 });
