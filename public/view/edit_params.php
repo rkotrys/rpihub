@@ -72,7 +72,16 @@
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanAP&sn=<?=$rpi['sn']?>' >Swich to<br>Access Point</a>            
         </div>
         <?php }else{ ?>
-
+        <table class="w3-table-all w3-hoverable w3-tiny">
+        <thead>
+        <tr colspan="2"><th>AP config:</th><tr>
+        </thead>
+        <tbody>
+        <?php foreach( $ld['localdata']['AP'] as $k=>$v){ ?>
+        <tr><td><?=$k?>:</td><td><?=$v?></td></tr>      
+        <?php } ?>  
+        </tbody>    
+        </table>
 
         <?php } ?>    
     </article>
