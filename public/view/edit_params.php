@@ -43,7 +43,7 @@ echo $buf;
         <header >
             <h3>Host manager</h3>
         </header>
-        <?=setparam("Set new hostname1","hostname",$rpi['hostname'],$rpi['sn']);?>
+        <?=setparam("Set new hostname1","hostname",$rpi['sn'],$rpi['hostname']);?>
         <form class="subform" method="get" action="" >
             <header class="w3-dark-grey">Set new hostname</header>
             <input class="w3-input" name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
