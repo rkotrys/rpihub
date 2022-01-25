@@ -7,7 +7,7 @@ function setparam( $header, $name, $sn, $value="" ){
 $buf = "
 <form class=\"subform\" method=\"get\" action=\"\" >
 <header class=\"w3-left-align w3-border-bottom\">$header</header>
-<div class=\"w3-row-padding\">
+<div class=\"w3-row\">
 <div class=\"w3-col m11 l10\">
 <input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" placeholder=\"$placeholder\">
 </div>
