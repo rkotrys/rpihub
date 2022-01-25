@@ -68,6 +68,7 @@
             <h3>AP manager</h3>
         </header>
         <div class="w3-center" >
+            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanAP&sn=<?=$rpi['sn']?>' >Swich to<br>Access Point</a>            
         </div>
     </article>
     <article  class="w3-card wlan_client_manager">
@@ -75,6 +76,7 @@
             <h3>WLAN client manager</h3>
         </header>
         <!--<div class="w3-panel w3-left-align">-->
+        <?php if( !is_array( $ld['localdata']['AP'])  ) { ?>
         <table class="w3-table-all w3-hoverable w3-tiny">
         <thead class="w3-light-grey">
         <tr class="w3-indigo" id="wlan_nets"><th colspan="3">Aviable wlans:</th></tr>        
@@ -96,7 +98,11 @@
         <tr class="<?=($onflag)?'w3-khaki':''?>"><td class="wlan_name" wlan_name="<?=$k?>">"<?=$k?>"<br><?=$ld['localdata']['scan'][$k]['address']?></td><td class="w3-center"><?=$ld['localdata']['scan'][$k]['channel']?></td><td><?=$ld['localdata']['scan'][$k]['level']?>dB</td></tr>
         <?php $wlan_no+=1; } ?>
         </tbody>
-        </table>        
+        </table> 
+        <?php }else{ ?>
+        <div class="w3-center" >
+            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanclient&sn=<?=$rpi['sn']?>' >Swich to<br>WLAN Client</a>            
+        </div>
         <!--</div>-->
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
