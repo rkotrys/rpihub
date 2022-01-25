@@ -71,7 +71,10 @@
         <div class="w3-center" >
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanAP&sn=<?=$rpi['sn']?>' >Swich to<br>Access Point</a>            
         </div>
-        <?php } ?>
+        <?php }else{ ?>
+
+
+        <?php } ?>    
     </article>
     <article  class="w3-card wlan_client_manager">
         <header>
@@ -105,7 +108,6 @@
         <div class="w3-center" >
             <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanClient&sn=<?=$rpi['sn']?>' >Swich to<br>WLAN Client</a>            
         </div>
-        <?php } ?>
         <!--</div>-->
         <div class="w3-center" >
             <form id="wlan_client" method="get" action="">
@@ -117,6 +119,7 @@
             <button class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="hostname" >Submit</button>
             </form>
         </div> 
+        <?php } ?>
     </article>
 
     <article  class="w3-card" id="debug_info">
