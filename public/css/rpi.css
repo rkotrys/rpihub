@@ -16,6 +16,7 @@ body {
     max-width: 270px;
     margin: 12px;
     padding: 5px;
+    display: none;
 }
 .rpi-online {
     background-color:antiquewhite;
