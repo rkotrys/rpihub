@@ -2,8 +2,9 @@
         $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
         $rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
         $service = $ld['display'];
-function setparam($header,$name,$value="",$sn){
-$buf = <<<EOD 
+
+function setparamform( $header, $name, $sn, $value="" ){
+$buf = <<<END 
 <form class="subform" method="get" action="" >
 <header class="w3-dark-grey">$header</header>
 <input class="w3-input" name="$name" id="$name" type="text" value="$value" placeholder="$placeholder">
@@ -11,7 +12,7 @@ $buf = <<<EOD
 <input type="hidden" name="sn" value="$sn" >
 <button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="$name" >Submit</button>
 </form>
-EOD;
+END;
 echo $buf;
 }
 ?>
