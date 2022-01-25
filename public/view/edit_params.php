@@ -2,6 +2,18 @@
         $ld =  json_decode( base64_decode( $rpi['theme'] ), true );
         $rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
         $service = $ld['display'];
+function setparam($header,$name,$value="",$sn){
+$buf=<<<EOD 
+<form class="subform" method="get" action="" >
+<header class="w3-dark-grey">$header</header>
+<input class="w3-input" name="$name" id="$name" type="text" value="$value" placeholder="$placeholder">
+<input type="hidden" name="set" value="$name" >
+<input type="hidden" name="sn" value="$sn" >
+<button  class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="$name" >Submit</button>
+</form>
+EOD;
+echo $buf;
+}
 ?>
 <div class='w3-container'>
     <header>
@@ -29,6 +41,7 @@
         <header >
             <h3>Host manager</h3>
         </header>
+        <?=setparam("Set new hostname1","hostname",$rpi['hostname'],$rpi['sn']);?>
         <form class="subform" method="get" action="" >
             <header class="w3-dark-grey">Set new hostname</header>
             <input class="w3-input" name="hostname" id="hostname" type="text" value="<?=$rpi['hostname']?>">
