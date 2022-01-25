@@ -83,14 +83,14 @@
         </tbody>    
         </table>
         <form id="ap_ssid" method="get" action="">
-            <label  class="w3-dark-grey">Set AP SSID</label>   
+            <header  class="w3-dark-grey">Set AP SSID</header>   
             <input class="w3-input" name="ap_ssid" id="ap_ssid" type="text" value="<?=$ld['localdata']['AP']['ssid'] ?>" placeholder="WLAN name (AP SSID)" >
             <input type="hidden" name="set" value="ap_ssid" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
             <button class="w3-button w3-red w3-round w3-small" style="color:red;margin-top:6px;" type="submit" name="submit" value="ap_ssid" >Submit</button>
         </form>
         <form id="ap_pass" method="get" action="">
-            <label  class="w3-dark-grey">Set AP password</label>   
+            <header  class="w3-dark-grey">Set AP password</header>   
             <input class="w3-input" name="ap_pass" id="ap_pass" type="text" value="" placeholder=">= 8 char" >
             <input type="hidden" name="set" value="ap_pass" >
             <input type="hidden" name="sn" value="<?=$rpi['sn']?>" >
