@@ -3,7 +3,7 @@
         $rpi['theme']=($ld['display']=='oled13')?'mono':$ld['localdata']['theme'];
         $service = $ld['display'];
 function setparam($header,$name,$value="",$sn){
-$buf=<<<EOD 
+$buf = <<<EOD 
 <form class="subform" method="get" action="" >
 <header class="w3-dark-grey">$header</header>
 <input class="w3-input" name="$name" id="$name" type="text" value="$value" placeholder="$placeholder">
