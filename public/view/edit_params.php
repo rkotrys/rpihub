@@ -94,7 +94,17 @@ echo $buf;
         <?php } ?>  
         </tbody>    
         </table>
-        <?=setparam("Set new hostname","hostname",$rpi['sn'],$rpi['hostname']);?>
+        <?php
+        $items=array(
+            'ssid'=>$ld['localdata']['AP']['ssid'],
+            'wpa_passphrase'=>$ld['localdata']['AP']['wpa_passphrase'],
+            'hw_mode'=>$ld['localdata']['AP']['hw_mode'],
+            'channel'=>$ld['localdata']['AP']['channel'],
+            'ignore_broadcast_ssid'=>$ld['localdata']['AP']['ignore_broadcast_ssid']
+            );
+        setparams( "Set AP params", $rpi['sn'], 'apsetparams', $items );
+        ?>
+        
         <form id="ap_ssid" method="get" action="">
             <header  class="w3-dark-grey w3-left-align">Set AP SSID</header>   
             <input class="w3-input" name="ap_ssid" id="ap_ssid" type="text" value="<?=$ld['localdata']['AP']['ssid'] ?>" placeholder="WLAN name (AP SSID)" >
