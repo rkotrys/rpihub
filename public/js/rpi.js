@@ -28,6 +28,7 @@ $(document).ready(function(){
                     if( rpi.ld.AP.ssid!=null ){
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("AP '"+rpi.ld.AP.ssid+"'");
                       $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("BSSID:");
+                      $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text(rpi.ld.AP.bssid);
                     }else{
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("Station");
                       $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("ESSID:");
