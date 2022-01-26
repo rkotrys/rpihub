@@ -25,6 +25,9 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                     $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
+                    if( rpi.ld.AP!=null ){
+                      $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("APx '"+rpi.ld.AP.ssid+"'");
+                    }
                     if( rpi.ld!=null ){
                       let t = rpi.ld.coretemp.valueOf();
                       $("[sn="+rpi.sn+"] .rpi-coretemp .rpivalue").text( t.toPrecision(3) );
