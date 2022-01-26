@@ -29,6 +29,7 @@ $(document).ready(function(){
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("AP '"+rpi.ld.AP.ssid+"'");
                     }else{
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("Station");
+                      $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("ESSID:");
                     }
                     if( rpi.ld!=null ){
                       let t = rpi.ld.coretemp.valueOf();
