@@ -24,7 +24,7 @@ echo $buf;
 }
 function setparams( $header, $sn, $cmd_name, $items ){
     $buf = "<form class=\"subform\" method=\"get\" action=\"\" >\n<header class=\"w3-left-align w3-border-bottom\">$header</header>\n";
-    for($items as $k=>$v){
+    foreach($items as $k=>$v){
        $name=$k;
        $value=$v
        $buf.="<label>$name</label>\n<input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" >\n";
