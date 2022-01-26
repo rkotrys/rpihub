@@ -27,7 +27,6 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
                     if( rpi.ld.AP.ssid!=null ){
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("AP '"+rpi.ld.AP.ssid+"'");
-                      $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text(rpi.ld.AP.bssid);
                     }else{
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("Station");
                     }
@@ -40,10 +39,10 @@ $(document).ready(function(){
                         $("[sn="+rpi.sn+"] .rpi-coretemp").css("background-color", "transparent");
                       }
                       if(rpi.ld.AP.ssid=null){
-                        $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("ESSID");
+                        $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("ESSID:");
                         $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text( rpi.ld.essid );
                       }else{
-                        $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("BSSID");
+                        $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("BSSID:");
                         $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text( rpi.ld.AP.bssid );
                       }
                     }
