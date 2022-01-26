@@ -26,7 +26,7 @@ function setparams( $header, $sn, $cmd_name, $items ){
     $buf = "<form class=\"subform\" method=\"get\" action=\"\" >\n<header class=\"w3-left-align w3-border-bottom\">$header</header>\n";
     foreach($items as $k=>$v){
        $name=$k;
-       $value=$v
+       $value=$v;
        $buf.="<label>$name</label>\n<input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" >\n";
     }
     $buf="<button  class=\"w3-button w3-red w3-round w3-small\" style=\"color:red;margin-top:6px;\" type=\"submit\" name=\"submit\" value=\"$sn\" >Submit</button>
