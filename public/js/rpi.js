@@ -43,7 +43,7 @@ $(document).ready(function(){
                         $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("ESSID:");
                         $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text( rpi.ld.essid );
                       }else{
-                        $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("BSSID:");
+                        $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("BSSID--:");
                         $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text( rpi.ld.AP.bssid );
                       }
                     }
