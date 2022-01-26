@@ -26,7 +26,12 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
                     if( rpi.ld.AP!=null ){
-                      $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("APx '"+rpi.ld.AP.ssid+"'");
+                      $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("AP '"+rpi.ld.AP.ssid+"'");
+                      $("[sn="+rpi.sn+"] .rpi-AP .rpikey").text("BSSID");
+                      $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text(rpi.ld.AP.bssid);
+                    }else{
+                      $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("Station");
+                      $("[sn="+rpi.sn+"] .rpi-AP .rpikey").text("ESSID");
                     }
                     if( rpi.ld!=null ){
                       let t = rpi.ld.coretemp.valueOf();
