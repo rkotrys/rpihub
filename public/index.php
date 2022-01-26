@@ -344,6 +344,30 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
       exit;
       break;
 
+      case 'apsetparams':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $ssid=$_GET['ssid'];
+            $wpa_passphrase=$_GET['wpa_passphrase'];
+            $hw_mode=($_GET['hw_mode']=='a')?'a':'g';
+            $channel=(is_numeric($_GET['channel']))?$_GET['channel']:0;
+            $ignore_broadcast_ssid=($_GET['ignore_broadcast_ssid']==0)?'0':'1';
+            $cmd=base64_encode( json_encode( array( 'name'=>'wlan_client', 
+                                                    'sn'=>$rpi['sn'], 
+                                                    'ssid'=>$ssid, 
+                                                    'wpa_passphrase'=>$wpa_passphrase,
+                                                    'hw_mode'=>$hw_mode,
+                                                    'channel'=>$channel,
+                                                    'ignore_broadcast_ssid'=>$ignore_broadcast_ssid
+                                                    ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");         
+      exit;
+      break;
+
+      
+
       
       default:
          $buf="<h1>RPI: bad token</h1>";
