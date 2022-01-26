@@ -352,7 +352,7 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
             $hw_mode=($_GET['hw_mode']=='a')?'a':'g';
             $channel=(is_numeric($_GET['channel']))?$_GET['channel']:0;
             $ignore_broadcast_ssid=($_GET['ignore_broadcast_ssid']==0)?'0':'1';
-            $cmd=base64_encode( json_encode( array( 'name'=>'wlan_client', 
+            $cmd=base64_encode( json_encode( array( 'name'=>'apsetparams', 
                                                     'sn'=>$rpi['sn'], 
                                                     'ssid'=>$ssid, 
                                                     'wpa_passphrase'=>$wpa_passphrase,
