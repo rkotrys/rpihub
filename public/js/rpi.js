@@ -25,7 +25,7 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                     $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
-                    if( rpi.ld.AP!=null ){
+                    if( rpi.ld.AP.ssid!=null ){
                       $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("AP '"+rpi.ld.AP.ssid+"'");
                       $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text(rpi.ld.AP.bssid);
                     }else{
