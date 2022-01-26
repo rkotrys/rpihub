@@ -22,6 +22,21 @@ $buf = "
 END;
 echo $buf;
 }
+function setparams( $header, $sn, $cmd_name, $items ){
+    $buf = "<form class=\"subform\" method=\"get\" action=\"\" >\n<header class=\"w3-left-align w3-border-bottom\">$header</header>\n";
+    for($items as $k=>$v){
+       $name=$k;
+       $value=$v
+       $buf.="<label>$name</label>\n<input class=\"w3-input\" name=\"$name\" id=\"$name\" type=\"text\" value=\"$value\" >\n";
+    }
+    $buf="<button  class=\"w3-button w3-red w3-round w3-small\" style=\"color:red;margin-top:6px;\" type=\"submit\" name=\"submit\" value=\"$sn\" >Submit</button>
+<input type=\"hidden\" name=\"set\" value=\"$cmd_name\" >
+<input type=\"hidden\" name=\"sn\" value=\"$sn\" >
+</form>
+";
+END;
+echo $buf;
+}
 ?>
 <div class='w3-container'>
     <header>
@@ -79,6 +94,7 @@ echo $buf;
         <?php } ?>  
         </tbody>    
         </table>
+        <?=setparam("Set new hostname","hostname",$rpi['sn'],$rpi['hostname']);?>
         <form id="ap_ssid" method="get" action="">
             <header  class="w3-dark-grey w3-left-align">Set AP SSID</header>   
             <input class="w3-input" name="ap_ssid" id="ap_ssid" type="text" value="<?=$ld['localdata']['AP']['ssid'] ?>" placeholder="WLAN name (AP SSID)" >
