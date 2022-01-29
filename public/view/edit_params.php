@@ -178,7 +178,7 @@ echo $buf;
         </thead>
         <tbody id="localdata_body">
         <?php foreach( $ld['localdata'] as $k=>$v ){ ?>
-            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array '.count($v).' items':$v?></td></tr>
         <?php } ?>
         </tbody>
         </table>
