@@ -98,7 +98,7 @@ echo $buf;
             </td></tr>      
         <?php }else{ ?>
             <tr><td><?=$k?>:</td><td><?=$v?></td></tr>    
-        <?php } ?>    
+        <?php } } ?>    
         </tbody>    
         </table>
         <?php
