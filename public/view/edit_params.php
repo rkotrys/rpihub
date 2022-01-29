@@ -90,9 +90,15 @@ echo $buf;
         <tr class="w3-indigo" id="apconfig"><th colspan="2">AP config:</th><tr>
         </thead>
         <tbody id="apconfig_body">
-        <?php foreach( $ld['localdata']['AP'] as $k=>$v){ ?>
-        <tr><td><?=$k?>:</td><td><?=$v?></td></tr>      
-        <?php } ?>  
+        <?php foreach( $ld['localdata']['AP'] as $k=>$v){ if( $k=='stations'){ ?>
+            <tr><td><?=$k?>:</td><td>
+            <?php foreach( $v as $stk=>$stv ){ ?>
+            <?=$stv['hostname']?>: <?=$stv['ip']?><br><?=$stv['mac']?>
+            <?php } ?>    
+            </td></tr>      
+        <?php }else{ ?>
+            <tr><td><?=$k?>:</td><td><?=$v?></td></tr>    
+        <?php } ?>    
         </tbody>    
         </table>
         <?php
