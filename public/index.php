@@ -344,6 +344,19 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
       exit;
       break;
 
+      case 'updatewlan0ip':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $ip=$_GET['updatewlan0ip'];
+            // test
+            error_log( "TEST: set: ".json_encode( array( 'name'=>'updatewlan0ip', 'sn'=>$rpi['sn'], 'value'=>$ip ) )."\n", 3, "/srv/www/rpi/error.log" );
+            $cmd=base64_encode( json_encode( array( 'name'=>'updatewlan0ip', 'sn'=>$rpi['sn'], 'value'=>$ip ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");         
+      exit;
+      break;
+
       case 'apsetparams':
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){   
