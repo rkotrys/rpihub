@@ -32,7 +32,19 @@
 </div>
 <div class='flex-container  rpi-AP'>
         <div class='rpikey'>mode :</div>
-        <div class='rpivalue'><?=($ld['localdata']['AP'])?"AP '".$ld['localdata']['AP']['ssid']."'":'Station'?></div>
+        <div class='rpivalue'>
+        <?php
+        $mode='Station';
+        if( $ld['localdata']['AP'] ) {
+           if( $ld['localdata']['AP'][bridge] ){
+                $mode='BrAP';  // bridged AP
+           }else{
+                $mode='RtAP';  // roured AP   
+           }
+        } 
+        ?>   
+        <?=$mode.($ld['localdata']['AP'])?" '".$ld['localdata']['AP']['ssid']."'":''?>
+        </div>
 </div>
 
 <?php if( isset($ld['localdata']['essid'] ) ){  ?>
