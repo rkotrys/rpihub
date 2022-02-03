@@ -38,7 +38,7 @@
         $apname="";
         if( $ld['localdata']['AP'] ) {
            $apname="'".$ld['localdata']['AP']['ssid']."'";
-           if( $ld['localdata']['AP'][bridge] ){
+           if( $ld['localdata']['AP']['bridge'] ){
                 $mode='BrAP:';  // bridged AP
 
            }else{
