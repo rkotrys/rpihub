@@ -23,10 +23,23 @@ $(document).ready(function(){
                   if( rpi.online=='online'){
                     $("[sn="+rpi.sn+"] .rpi-last .rpivalue").text(rpi.last);
                     $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
-                    $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
+                    if( rpi.ld.AP.ssid!=null ){
+                      if( rpi.ld.AP.bridge==true){
+                        $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("br0");
+                        $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ld.AP.br0);
+                      }else{
+                        $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("eth0");
+                        $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
+                      }
+                    }else{
+                      $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("eth0");  
+                      $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
+                    }  
+                        
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
                     if( rpi.ld.AP.ssid!=null ){
                       if( rpi.ld.AP.bridge==true){
+                        $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("BrAP: '"+rpi.ld.AP.ssid+"'");
                         $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("BrAP: '"+rpi.ld.AP.ssid+"'");
                       }else{
                         $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("RtAP: '"+rpi.ld.AP.ssid+"'");
