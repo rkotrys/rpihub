@@ -35,7 +35,7 @@
         <div class='rpivalue'>
         <?php
         $mode='Station';
-        $apname=""
+        $apname="";
         if( $ld['localdata']['AP'] ) {
            $apname="'".$ld['localdata']['AP']['ssid']."'";
            if( $ld['localdata']['AP'][bridge] ){
