@@ -82,7 +82,10 @@ echo $buf;
         </header>
         <?php if( !is_array( $ld['localdata']['AP'])  ) { ?>
         <div class="w3-center" >
-            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanAP&sn=<?=$rpi['sn']?>' >Swich to<br>Access Point</a>            
+            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanAP&sn=<?=$rpi['sn']?>' >Swich to<:br>Routed Access Point</a>            
+        </div>
+        <div class="w3-center" >
+            <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=towlanBridgeAP&sn=<?=$rpi['sn']?>' >Swich to:<br>Bridged Access Point</a>            
         </div>
         <?php }else{ ?>
         <table class="w3-table-all w3-hoverable w3-tiny">
