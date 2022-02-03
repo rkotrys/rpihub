@@ -25,14 +25,14 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-hostname .rpivalue").text(rpi.hostname);
                     if( rpi.ld.AP.ssid!=null ){
                       if( rpi.ld.AP.bridge==true){
-                        $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("br0");
+                        $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("br0:");
                         $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ld.AP.br0);
                       }else{
-                        $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("eth0");
+                        $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("eth0:");
                         $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                       }
                     }else{
-                      $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("eth0");  
+                      $("[sn="+rpi.sn+"] .rpi-ip .rpikey").text("eth0:");  
                       $("[sn="+rpi.sn+"] .rpi-ip .rpivalue").text(rpi.ip);
                     }  
                         
