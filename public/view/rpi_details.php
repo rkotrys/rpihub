@@ -35,15 +35,18 @@
         <div class='rpivalue'>
         <?php
         $mode='Station';
+        $apname=""
         if( $ld['localdata']['AP'] ) {
+           $apname="'".$ld['localdata']['AP']['ssid']."'";
            if( $ld['localdata']['AP'][bridge] ){
-                $mode='BrAP';  // bridged AP
+                $mode='BrAP:';  // bridged AP
+
            }else{
-                $mode='RtAP';  // roured AP   
+                $mode='RtAP:';  // roured AP   
            }
         } 
         ?>   
-        <?=$mode.($ld['localdata']['AP'])?" '".$ld['localdata']['AP']['ssid']."'":''?>
+        <?=$mode.$apname?>
         </div>
 </div>
 
