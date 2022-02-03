@@ -27,9 +27,9 @@ $(document).ready(function(){
                     $("[sn="+rpi.sn+"] .rpi-wip .rpivalue").text(rpi.wip);
                     if( rpi.ld.AP.ssid!=null ){
                       if( rpi.ld.AP.bridge==true){
-                        $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("BrAP '"+rpi.ld.AP.ssid+"'");
+                        $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("BrAP: '"+rpi.ld.AP.ssid+"'");
                       }else{
-                        $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("RtAP '"+rpi.ld.AP.ssid+"'");
+                        $("[sn="+rpi.sn+"] .rpi-AP .rpivalue").text("RtAP: '"+rpi.ld.AP.ssid+"'");
                       }
                       $("[sn="+rpi.sn+"] .rpi-essid .rpikey").text("BSSID:");
                       $("[sn="+rpi.sn+"] .rpi-essid .rpivalue").text(rpi.ld.AP.bssid);
