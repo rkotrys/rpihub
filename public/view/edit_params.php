@@ -114,7 +114,9 @@ echo $buf;
             );
         setparams( "Set AP params", $rpi['sn'], 'apsetparams', $items );
         ?>
-        <?=setparam("Update wlan0 IP","updatewlan0ip",$rpi['sn'],$rpi['wip'],'1.1.1.1/24');?>
+          <?php if($ld['localdata']['AP']['bridge']!=1) { ?>
+             <?=setparam("Update wlan0 IP","updatewlan0ip",$rpi['sn'],$rpi['wip'],'1.1.1.1/24');?>
+          <?php } ?>
         <?php } ?>    
     </article>
     <article  class="w3-card wlan_client_manager">
