@@ -291,6 +291,26 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
          }
       header("Location: /?get=getall");
       exit;
+      break;
+
+      case 'btdisconnect':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'btdisconnect', 'value'=>$_GET['btdisconnect'], 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");
+      exit;
+      break;  
+
+      case 'btremove':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'btremove', 'value'=>$_GET['btremove'], 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");
+      exit;
       break;  
 
       case 'update':
