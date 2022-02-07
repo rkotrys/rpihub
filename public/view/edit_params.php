@@ -180,15 +180,13 @@ echo $buf;
             foreach( $ld['localdata']['bluetooth'] as $k=>$v ){ 
         ?>
             <tr><td><?=$k?>:</td><td>
-            <?php 
-            if( is_array($v) ){
-                foreach( $v as $k1=>$v2 ) { 
-                    echo "1) $k1: $v2<br>"; 
-                }
-            }else{
-                echo $v2;
-            } 
-            ?> 
+            <?php if( is_array($v) ){ ?>
+            <table>    
+            <?php foreach( $v as $k1=>$v1 ) { ?>
+            <tr><td><?=$v1?></td><td><?=$k1?></td></tr>    
+            <?php } ?>
+            </table>
+            <?php }else{ ?>
             <?=$v?>
             </td></tr>
         <?php }}else{ ?>
