@@ -178,11 +178,11 @@ echo $buf;
         <?php if(count($ld['localdata']['bluetooth'])>0){foreach( $ld['localdata']['bluetooth'] as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td>
             <?php 
-            //if( is_array($v) ){
-            //    foreach( $v as $k1=>$v2 ) { print("$k1: $v<br>"); }
-            //}else{
-            //    print( $v );
-            //} 
+            if( is_array($v) ){
+                foreach( $v as $k1=>$v2 ) { print("$k1: $v2<br>"); }
+            }else{
+                print( $v2 );
+            } 
             ?> 
             <?=$v?>
             </td></tr>
