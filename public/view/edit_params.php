@@ -195,7 +195,9 @@ echo $buf;
         <?php } ?>    
         </tbody>
         </table>
-        <?=setparam("Connect to BT:","btconnect",$rpi['sn'],"","BT-address");?>
+        <?=setparam("Connect to BT dev:","btconnect",$rpi['sn'],"","BT-address");?>
+        <?=setparam("Disconnect BT dev:","btdisconnect",$rpi['sn'],"","BT-address");?>
+        <?=setparam("Remove BT dev:","btremove",$rpi['sn'],"","BT-address");?>
     </article>
 
 
