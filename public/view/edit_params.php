@@ -165,6 +165,26 @@ echo $buf;
         <?php } ?>
     </article>
 
+    <article  class="w3-card" id="bluetooth_manager">
+        <header>
+            <h3>Bluetooth manager</h3>
+        </header>
+        <table class="w3-table-all w3-hoverable w3-tiny">
+        <thead class="w3-light-grey">
+        <tr class="w3-indigo" id="bluetooth"><th colspan="2" >Bluetooth info:</th></tr>        
+        <tr><th>name</th><th>value</th></tr>   
+        </thead>
+        <tbody id="bluetooth_body">
+        <?php if(isset($ld['bluetooth'])){foreach( $ld['bluetooth'] as $k=>$v ){ ?>
+            <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
+        <?php }}else{ ?>
+            <tr><td conspan="2">No bluetooth data</td></tr>
+        <?php } ?>    
+        </tbody>
+        </table>
+    </article>
+
+
     <article  class="w3-card" id="debug_info">
         <header>
             <h3>Debag info</h3>
