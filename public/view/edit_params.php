@@ -188,6 +188,7 @@ echo $buf;
             </table>
             <?php }else{ ?>
             <?=$v?>
+            <?php } ?>
             </td></tr>
         <?php }}else{ ?>
             <tr><td conspan="2">No bluetooth data <?=$ld['localdata']['bluetooth']['Controler']?></td></tr>
