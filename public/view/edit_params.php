@@ -175,11 +175,16 @@ echo $buf;
         <tr><th>name</th><th>value</th></tr>   
         </thead>
         <tbody id="bluetooth_body">
-        <?php if(count($ld['localdata']['bluetooth'])>0){foreach( $ld['localdata']['bluetooth'] as $k=>$v ){ ?>
+        <?php 
+        if( count($ld['localdata']['bluetooth'])>0 ){
+            foreach( $ld['localdata']['bluetooth'] as $k=>$v ){ 
+        ?>
             <tr><td><?=$k?>:</td><td>
             <?php 
             if( is_array($v) ){
-                foreach( $v as $k1=>$v2 ) { echo "$k1: $v2<br>"; }
+                foreach( $v as $k1=>$v2 ) { 
+                    echo "1) $k1: $v2<br>"; 
+                }
             }else{
                 echo $v2;
             } 
