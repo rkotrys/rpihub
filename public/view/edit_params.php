@@ -175,7 +175,7 @@ echo $buf;
         <tr><th>name</th><th>value</th></tr>   
         </thead>
         <tbody id="bluetooth_body">
-        <?php if(isset($ld['bluetooth'])){foreach( $ld['bluetooth'] as $k=>$v ){ ?>
+        <?php if(count($ld['bluetooth'])>0){foreach( $ld['bluetooth'] as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td><?=(is_array($v))?'array':$v?></td></tr>
         <?php }}else{ ?>
             <tr><td conspan="2">No bluetooth data</td></tr>
