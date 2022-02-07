@@ -181,7 +181,6 @@ echo $buf;
         ?>
             <tr><td><?=$k?>:</td><td>
             <?php 
-            print_r($v);
             if( is_array($v) ){
                 foreach( $v as $k1=>$v2 ) { 
                     echo "1) $k1: $v2<br>"; 
