@@ -179,9 +179,9 @@ echo $buf;
             <tr><td><?=$k?>:</td><td>
             <?php 
             if( is_array($v) ){
-                foreach( $v as $k1=>$v2 ) { print("$k1: $v2<br>"); }
+                foreach( $v as $k1=>$v2 ) { echo "$k1: $v2<br>"; }
             }else{
-                print( $v2 );
+                echo $v2;
             } 
             ?> 
             <?=$v?>
