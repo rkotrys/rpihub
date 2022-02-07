@@ -177,11 +177,14 @@ echo $buf;
         <tbody id="bluetooth_body">
         <?php if(count($ld['localdata']['bluetooth'])>0){foreach( $ld['localdata']['bluetooth'] as $k=>$v ){ ?>
             <tr><td><?=$k?>:</td><td>
-            <?php if( is_array($v) ){
-                foreach( $v as $k1=>$v2 ) { print("$k1: $v<br>"); }
-            }else{
-                print( $v );
-            } ?>        
+            <?php 
+            //if( is_array($v) ){
+            //    foreach( $v as $k1=>$v2 ) { print("$k1: $v<br>"); }
+            //}else{
+            //    print( $v );
+            //} 
+            ?> 
+            $v       
             </td></tr>
         <?php }}else{ ?>
             <tr><td conspan="2">No bluetooth data <?=$ld['localdata']['bluetooth']['Controler']?></td></tr>
