@@ -13,6 +13,9 @@ $(document).ready(function(){
    });
    $("#apconfig").click( function(){
     $("#apconfig_body").toggle() ;
- });
+   });
+   $("#bluetooth").click( function(){
+    $("#bluetooth_body").toggle() ;
+   });
 
 });

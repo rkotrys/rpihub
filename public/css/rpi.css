@@ -95,6 +95,7 @@ article form.subform {
 #rpi_body, 
 #localdata_body,
 #wlan_nets_body,
-#apconfig_body {
+#apconfig_body,
+#bluetooth_body {
     display: none;
 }
