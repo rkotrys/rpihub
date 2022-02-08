@@ -293,6 +293,17 @@ if( isset($_GET['set'] ) and $_GET['set']!='' ){
       exit;
       break;
 
+      case 'btdiscoveroff':
+         $rpi=$db->get($_GET['sn']);
+         if( is_array($rpi) and count($rpi)>0 ){   
+            $cmd=base64_encode( json_encode( array( 'name'=>'btdiscoveroff', 'value'=>'', 'sn'=>$rpi['sn'] ) ) );
+            $db->update( array( 'sn'=>$rpi['sn'], 'cmd'=>$cmd ) );
+         }
+      header("Location: /?get=getall");
+      exit;
+      break;
+
+
       case 'btscan':
          $rpi=$db->get($_GET['sn']);
          if( is_array($rpi) and count($rpi)>0 ){   
