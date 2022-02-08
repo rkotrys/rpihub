@@ -195,8 +195,8 @@ echo $buf;
         <?php } ?>    
         </tbody>
         </table>
-        <?=setparam("Connect to BT dev:","btconnect",$rpi['sn'],"","BT-address");?>
-        <?=setparam("Disconnect BT dev:","btdisconnect",$rpi['sn'],"","BT-address");?>
+        <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=btdiscover&sn=<?=$rpi['sn']?>' >Set RPI dicovering</a>
+        <a class="w3-button w3-red w3-round w3-small" style="color:red;margin-bottom:6px;" href='?set=btscan&sn=<?=$rpi['sn']?>' >Run BT device scanning</a>
         <?=setparam("Remove BT dev:","btremove",$rpi['sn'],"","BT-address");?>
     </article>
 
