@@ -181,7 +181,7 @@ echo $buf;
         ?>
             <tr><td><?=$k?>:</td><td>
             <?php if ($k=='Connected' and $v!='no'){ ?>
-            <?=$ld['localdata']['bluetooth']['paired'][$v]?> $nbsp;$nbsp;<?=$v?>
+            <?=$ld['localdata']['bluetooth']['paired'][$v]?> &nbsp;&nbsp;<?=$v?>
             <?php continue; } ?>
             <?php if( is_array($v) ){ ?>
             <table>    
